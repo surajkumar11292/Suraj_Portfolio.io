@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════════════════════════════
+   VARIABLES.CSS — Design tokens, themes, and global resets
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── FONT IMPORTS ─────────────────────────────────────────────── */
+/* Google Fonts moved to a <link> in index.html <head> — faster, non-render-blocking */
+
+/* ── LIGHT MODE TOKENS ────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-root:         #F0EDE4;
+  --bg-surface:      #E8E4D9;
+  --bg-card:         #FAFAF7;
+  --bg-card-raised:  #FFFFFF;
+  --bg-overlay:      rgba(26, 26, 24, 0.6);
+  --nav-bg:          rgba(240, 237, 228, 0.9);
+
+  /* Accent (primary brand) */
+  --accent:          #004743;
+  --accent-hover:    #005E58;
+  --accent-light:    rgba(0, 71, 67, 0.08);
+  --accent-medium:   rgba(0, 71, 67, 0.15);
+  --accent-strong:   rgba(0, 71, 67, 0.25);
+
+  /* Secondary accent */
+  --accent2:         #B8860B;
+  --accent2-light:   rgba(184, 134, 11, 0.1);
+
+  /* Text */
+  --text-primary:    #1A1A18;
+  --text-secondary:  #4A4A44;
+  --text-muted:      #8A8A82;
+  --text-faint:      #B0AFA8;
+
+  /* Borders */
+  --border-faint:    rgba(0, 71, 67, 0.08);
+  --border:          rgba(0, 71, 67, 0.14);
+  --border-strong:   rgba(0, 71, 67, 0.28);
+
+  /* Semantic */
+  --success:         #22c55e;
+  --warning:         #f59e0b;
+  --danger:          #ef4444;
+  --info:            #3b82f6;
+
+  /* Progress bar */
+  --progress:        #004743;
+
+  /* Shadows */
+  --shadow-sm:       0 1px 3px rgba(0,71,67,0.07), 0 1px 2px rgba(0,71,67,0.04);
+  --shadow-md:       0 4px 16px rgba(0,71,67,0.09), 0 2px 6px rgba(0,71,67,0.05);
+  --shadow-lg:       0 12px 40px rgba(0,71,67,0.13), 0 4px 12px rgba(0,71,67,0.07);
+  --shadow-glow:     0 0 0 3px rgba(0, 71, 67, 0.2);
+
+  /* Typography scale */
+  --font-display:    'Fraunces', Georgia, serif;
+  --font-body:       'DM Sans', system-ui, sans-serif;
+  --font-mono:       'DM Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --gap-xs:  0.375rem;
+  --gap-sm:  0.625rem;
+  --gap-md:  1rem;
+  --gap-lg:  1.5rem;
+  --gap-xl:  2.5rem;
+  --gap-2xl: 4rem;
+
+  /* Border radius */
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  12px;
+  --r-xl:  16px;
+  --r-2xl: 24px;
+  --r-full: 9999px;
+
+  /* Transitions */
+  --t-fast:   0.15s ease;
+  --t-normal: 0.25s ease;
+  --t-slow:   0.4s ease;
+
+  /* Z-index layers */
+  --z-below:   -1;
+  --z-base:    1;
+  --z-raised:  10;
+  --z-nav:     100;
+  --z-modal:   999;
+  --z-toast:   1000;
+}
+
+/* ── DARK MODE TOKENS ─────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-root:         #0F2F2F;
+  --bg-surface:      #0A2424;
+  --bg-card:         #152E2E;
+  --bg-card-raised:  #1C3A3A;
+  --bg-overlay:      rgba(0, 0, 0, 0.78);
+  --nav-bg:          rgba(15, 47, 47, 0.92);
+
+  --accent:          #E6C79C;
+  --accent-hover:    #F0D4B0;
+  --accent-light:    rgba(230, 199, 156, 0.08);
+  --accent-medium:   rgba(230, 199, 156, 0.15);
+  --accent-strong:   rgba(230, 199, 156, 0.28);
+
+  --accent2:         #7FC8C4;
+  --accent2-light:   rgba(127, 200, 196, 0.1);
+
+  --text-primary:    #F5F0E8;
+  --text-secondary:  #B8B0A0;
+  --text-muted:      #6E6A60;
+  --text-faint:      #4A4844;
+
+  --border-faint:    rgba(230, 199, 156, 0.06);
+  --border:          rgba(230, 199, 156, 0.13);
+  --border-strong:   rgba(230, 199, 156, 0.26);
+
+  --progress:        #E6C79C;
+
+  --shadow-sm:       0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md:       0 4px 16px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.2);
+  --shadow-lg:       0 12px 40px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-glow:     0 0 0 3px rgba(230, 199, 156, 0.25);
+}
+
+/* ── TERMINAL / HACKER MODE TOKENS ───────────────────────────── */
+[data-theme="terminal"] {
+  /* Backgrounds — pure black */
+  --bg-root:         #0A0A0A;
+  --bg-surface:      #0D0D0D;
+  --bg-card:         #111111;
+  --bg-card-raised:  #161616;
+  --bg-overlay:      rgba(0, 0, 0, 0.88);
+  --nav-bg:          rgba(10, 10, 10, 0.95);
+ 
+  /* Accent — matrix green */
+  --accent:          #00FF41;
+  --accent-hover:    #33FF66;
+  --accent-light:    rgba(0, 255, 65, 0.07);
+  --accent-medium:   rgba(0, 255, 65, 0.14);
+  --accent-strong:   rgba(0, 255, 65, 0.28);
+ 
+  /* Secondary accent — dim green */
+  --accent2:         #00CC33;
+  --accent2-light:   rgba(0, 204, 51, 0.1);
+ 
+  /* Text — green on black */
+  --text-primary:    #00FF41;
+  --text-secondary:  #00CC33;
+  --text-muted:      #008F1F;
+  --text-faint:      #005C14;
+ 
+  /* Borders — faint green */
+  --border-faint:    rgba(0, 255, 65, 0.06);
+  --border:          rgba(0, 255, 65, 0.15);
+  --border-strong:   rgba(0, 255, 65, 0.32);
+ 
+  /* Semantic — keep readable */
+  --success:         #00FF41;
+  --warning:         #FFD700;
+  --danger:          #FF3333;
+  --info:            #00BFFF;
+ 
+  --progress:        #00FF41;
+ 
+  /* Shadows — green glow */
+  --shadow-sm:       0 1px 3px rgba(0,255,65,0.08), 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md:       0 4px 16px rgba(0,255,65,0.1), 0 2px 6px rgba(0,0,0,0.6);
+  --shadow-lg:       0 12px 40px rgba(0,255,65,0.15), 0 4px 12px rgba(0,0,0,0.7);
+  --shadow-glow:     0 0 0 3px rgba(0, 255, 65, 0.3);
+ 
+  /* ALL fonts → DM Mono */
+  --font-display:    'DM Mono', 'Fira Code', monospace;
+  --font-body:       'DM Mono', 'Fira Code', monospace;
+  --font-mono:       'DM Mono', 'Fira Code', monospace;
+}
+ 
+/* Terminal theme — scanline overlay for that CRT feel */
+[data-theme="terminal"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-toast);
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.015) 2px,
+    rgba(0, 255, 65, 0.015) 4px
+  );
+}
+ 
+/* Terminal theme — green text selection */
+[data-theme="terminal"] ::selection {
+  background-color: #00FF41;
+  color: #0A0A0A;
+}
+ 
+/* Terminal theme — green scrollbar */
+[data-theme="terminal"] ::-webkit-scrollbar-thumb {
+  background: #00FF41;
+}
+ 
+/* Terminal theme — flatten all border-radius for that CLI feel */
+[data-theme="terminal"] {
+  --r-sm:  2px;
+  --r-md:  3px;
+  --r-lg:  4px;
+  --r-xl:  4px;
+  --r-2xl: 4px;
+  --r-full: 4px;
+}
+ 
+/* Terminal — remove italic on hero name em, keep mono */
+[data-theme="terminal"] .hero-name em {
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+ 
+/* Terminal — section titles lose serif italic */
+[data-theme="terminal"] .section__title em,
+[data-theme="terminal"] h1 em,
+[data-theme="terminal"] h2 em {
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+ 
+/* Terminal — hero bg text gets green stroke */
+[data-theme="terminal"] .hero-bg-text {
+  -webkit-text-stroke: 1px rgba(0, 255, 65, 0.12);
+}
+ 
+/* Terminal — nav logo glows */
+[data-theme="terminal"] .nav-logo {
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.5);
+  letter-spacing: 0.1em;
+}
+ 
+/* Terminal — accent glow on buttons */
+[data-theme="terminal"] .btn--primary {
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.25);
+}
+[data-theme="terminal"] .btn--primary:hover {
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.45);
+}
+ 
+/* Terminal — card border glow on hover */
+[data-theme="terminal"] .project-card:hover,
+[data-theme="terminal"] .skill-group:hover,
+[data-theme="terminal"] .cert-card:hover,
+[data-theme="terminal"] .blog-card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.12);
+}
+ 
+/* Terminal — theme toggle shows "> _" */
+[data-theme="terminal"] #theme-toggle::after {
+  transform: translateX(20px);
+  background: #00FF41;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.8);
+}
+
+/* ── GLOBAL RESET ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-root);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background-color var(--t-slow), color var(--t-slow);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── TEXT SELECTION ───────────────────────────────────────────── */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-root);
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--r-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── FOCUS VISIBLE ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ── LINKS ────────────────────────────────────────────────────── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--t-fast);
+}
+a:hover { opacity: 0.8; }

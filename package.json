@@ -1,0 +1,25 @@
+{
+  "name": "arman-claude-final",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arman080325/Arman-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arman080325/Arman-Portfolio/issues"
+  },
+  "homepage": "https://github.com/arman080325/Arman-Portfolio#readme",
+  "dependencies": {
+    "@google/genai": "^2.17.1",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.2"
+  }
+}

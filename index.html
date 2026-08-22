@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ── EARLY THEME (prevents wrong-theme flash on loader + site) ── -->
+  <script>(function () { try { var t = localStorage.getItem('ak-theme') || 'light'; document.documentElement.setAttribute('data-theme', t); } catch (e) { } })();</script>
+
+  <meta name="description"
+    content="Suraj Kumar — Full-Stack Software Engineer. Builder of Chat-App, NoShare P2P, and Police-Documentation AI portal. MERN · WebRTC · Docker.">
+  <meta name="keywords"
+    content="Suraj Kumar portfolio, Suraj Kumar, Full-Stack Developer, MERN Stack, React, Node.js, WebRTC, Socket.io, Docker, JavaScript, MongoDB, Bengaluru">
+  <meta name="author" content="Suraj Kumar">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Suraj Kumar — Full-Stack Software Engineer">
+  <meta property="og:description"
+    content="Full-Stack Software Engineer. Builder of real-time, P2P, and AI-powered web applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://surajkumar11292.github.io/">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Suraj Kumar — Portfolio Preview">
+  <meta property="og:site_name" content="Suraj Kumar">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://surajkumar11292.github.io/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suraj Kumar — Full-Stack Software Engineer">
+  <meta name="twitter:description" content="Full-Stack Software Engineer. Builder of real-time, P2P, and AI-powered web applications.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Suraj Kumar — Portfolio Preview">
+
+  <title>Suraj Kumar — Portfolio</title>
+
+  <!-- Favicon placeholder (replace with your own) -->
+  <!-- ── FAVICON ─────────────────────────────────────────────────
+       HOW TO GENERATE:
+       1. Go to https://favicon.io/favicon-generator/
+       2. Text → "AK", Background: #004743, Font colour: #F0EDE4
+          Font family: Any, Style: Bold, Size: 110
+       3. Download ZIP → extract into your assets/ folder
+       4. The <link> tags below will work automatically.
+  ──────────────────────────────────────────────────────────── -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <!-- Fallback while you haven't generated one yet — remove once real favicons are in assets/ -->
+  <!-- <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>"> -->
+
+  <!-- Preconnect for Google Fonts (loaded in variables.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap">
+
+  <!-- Stylesheets — order matters -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/transitions.css">
+  <link rel="stylesheet" href="css/building-card.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/scanner.css">
+  <link rel="stylesheet" href="css/project-hero.css">
+  <link rel="stylesheet" href="css/chat.css">
+
+
+
+
+  <!-- ══════════════════════════════════════════════
+       BOOT LOADER — "DECRYPT" (self-contained, theme-aware)
+  ══════════════════════════════════════════════ -->
+  <style id="ak-loader-style">
+    html.akl-lock,
+    html.akl-lock body {
+      overflow: hidden !important;
+    }
+
+    #ak-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1.4rem, 4vh, 2.4rem);
+      padding: 1.5rem;
+      --l-bg: #F0EDE4;
+      --l-ink: #1A1A18;
+      --l-accent: #004743;
+      --l-accent2: #B8860B;
+      --l-faint: rgba(0, 71, 67, 0.10);
+      --l-track: rgba(0, 71, 67, 0.12);
+      background: var(--l-bg);
+      color: var(--l-ink);
+      clip-path: inset(0 0 0 0);
+      transition: clip-path .72s cubic-bezier(.76, 0, .24, 1);
+      font-family: 'DM Mono', 'Fira Code', monospace;
+    }
+
+    html[data-theme="dark"] #ak-loader {
+      --l-bg: #0F2F2F;
+      --l-ink: #F5F0E8;
+      --l-accent: #E6C79C;
+      --l-accent2: #7FC8C4;
+      --l-faint: rgba(230, 199, 156, 0.10);
+      --l-track: rgba(230, 199, 156, 0.14);
+    }
+
+    html[data-theme="terminal"] #ak-loader {
+      --l-bg: #0A0A0A;
+      --l-ink: #00FF41;
+      --l-accent: #00FF41;
+      --l-accent2: #00CC33;
+      --l-faint: rgba(0, 255, 65, 0.12);
+      --l-track: rgba(0, 255, 65, 0.16);
+    }
+
+    #ak-loader::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .5;
+      background-image:
+        linear-gradient(var(--l-faint) 1px, transparent 1px),
+        linear-gradient(90deg, var(--l-faint) 1px, transparent 1px);
+      background-size: 40px 40px;
+      -webkit-mask-image: radial-gradient(120% 90% at 50% 45%, #000 0%, transparent 70%);
+      mask-image: radial-gradient(120% 90% at 50% 45%, #000 0%, transparent 70%);
+    }
+
+    .akl-kicker {
+      position: relative;
+      z-index: 1;
+      font-size: .7rem;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: var(--l-accent);
+      opacity: .85;
+      padding-left: .42em;
+    }
+
+    .akl-name {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .akl-cipher,
+    .akl-wordmark {
+      grid-area: 1 / 1;
+    }
+
+    .akl-cipher {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .62em;
+      font-weight: 500;
+      line-height: 1.05;
+      font-size: clamp(1.45rem, 6.4vw, 2.95rem);
+      letter-spacing: .06em;
+      transition: opacity .45s ease, transform .45s ease, filter .45s ease;
+    }
+
+    .akl-word {
+      display: inline-flex;
+    }
+
+    .akl-ch {
+      display: inline-block;
+      width: .66em;
+      text-align: center;
+      color: var(--l-accent);
+    }
+
+    .akl-ch.resolved {
+      color: var(--l-ink);
+    }
+
+    .akl-ch.locked {
+      animation: akl-lock .42s ease;
+    }
+
+    @keyframes akl-lock {
+      0% {
+        color: var(--l-accent);
+        text-shadow: 0 0 12px var(--l-accent);
+        transform: translateY(-3px) scale(1.12);
+      }
+
+      100% {
+        color: var(--l-ink);
+        text-shadow: none;
+        transform: none;
+      }
+    }
+
+    .akl-wordmark {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 8vw, 3.6rem);
+      letter-spacing: -.015em;
+      line-height: 1.04;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(5px);
+      transition: opacity .6s ease, transform .6s ease, filter .6s ease;
+    }
+
+    .akl-wordmark em {
+      font-style: italic;
+      color: var(--l-accent);
+    }
+
+    #ak-loader.akl-promoted .akl-cipher {
+      opacity: 0;
+      transform: translateY(-8px);
+      filter: blur(4px);
+    }
+
+    #ak-loader.akl-promoted .akl-wordmark {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    .akl-readout {
+      position: relative;
+      z-index: 1;
+      width: min(420px, 80vw);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .76rem;
+      letter-spacing: .02em;
+      color: var(--l-ink);
+    }
+
+    .akl-readout .akl-l {
+      display: flex;
+      align-items: center;
+      gap: .55ch;
+      opacity: .85;
+    }
+
+    .akl-readout .akl-prompt {
+      color: var(--l-accent);
+    }
+
+    .akl-caret {
+      color: var(--l-accent);
+      animation: akl-blink 1s steps(1) infinite;
+    }
+
+    .akl-pct {
+      color: var(--l-accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @keyframes akl-blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .akl-bar {
+      position: relative;
+      z-index: 1;
+      width: min(420px, 80vw);
+      height: 2px;
+      background: var(--l-track);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .akl-bar>i {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--l-accent2), var(--l-accent));
+      transition: width .14s linear;
+    }
+
+    .akl-hex {
+      position: relative;
+      z-index: 1;
+      font-size: .62rem;
+      letter-spacing: .18em;
+      color: var(--l-ink);
+      opacity: .32;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .akl-skip {
+      position: absolute;
+      bottom: clamp(1rem, 3vh, 1.75rem);
+      right: clamp(1rem, 3vw, 1.75rem);
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .35rem .7rem;
+      font-family: 'DM Mono', 'Fira Code', monospace;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--l-ink);
+      opacity: .65;
+      background: var(--l-faint);
+      border: 1px solid var(--l-track);
+      border-radius: 6px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: opacity .2s ease, background-color .2s ease, transform .2s ease, border-color .2s ease;
+      user-select: none;
+    }
+
+    .akl-skip:hover,
+    .akl-skip:focus-visible {
+      opacity: 1;
+      background: var(--l-track);
+      border-color: var(--l-accent);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .akl-skip:active {
+      transform: translateY(0);
+    }
+
+    .akl-skip kbd {
+      display: inline-block;
+      padding: .12em .42em;
+      font-size: .64rem;
+      font-family: inherit;
+      font-weight: 600;
+      color: var(--l-accent);
+      background: var(--l-bg);
+      border: 1px solid var(--l-track);
+      border-radius: 4px;
+      box-shadow: 0 1px 0 var(--l-track);
+      line-height: 1.2;
+    }
+
+    #ak-loader.akl-done {
+      clip-path: inset(0 0 100% 0);
+    }
+
+    #ak-loader.akl-done>* {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity .3s ease, transform .4s ease;
+    }
+
+    #ak-loader.akl-fast {
+      transition: opacity .4s cubic-bezier(.16, 1, .3, 1), clip-path .4s cubic-bezier(.16, 1, .3, 1) !important;
+    }
+
+    #ak-loader.akl-fast.akl-done {
+      opacity: 0;
+      clip-path: inset(0 0 100% 0);
+    }
+
+    #ak-loader.akl-fast.akl-done>* {
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity .25s ease, transform .3s ease;
+    }
+
+    @media (max-width:520px) {
+      .akl-wordmark {
+        white-space: normal;
+      }
+
+      .akl-skip {
+        bottom: 1rem;
+        right: 1rem;
+        padding: .3rem .55rem;
+        font-size: .65rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .akl-cipher {
+        display: none;
+      }
+
+      .akl-wordmark {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+
+      .akl-caret {
+        animation: none;
+      }
+
+      #ak-loader {
+        transition: opacity .3s ease;
+      }
+
+      #ak-loader.akl-done {
+        clip-path: inset(0 0 0 0);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <!-- ══════════════════════════════════════════════
+       STRUCTURED DATA — Rich Snippets (Person, WebSite, SoftwareApplication ItemList)
+  ══════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://surajkumar11292.github.io/#person",
+        "name": "Suraj Kumar",
+        "alternateName": "Suraj Kumar Portfolio",
+        "url": "https://surajkumar11292.github.io/",
+        "image": "assets/photo.jpg",
+        "jobTitle": "Full-Stack Software Engineer",
+        "description": "Full-Stack Software Engineer specializing in MERN stack, real-time systems with WebRTC/Socket.io, and AI-integrated web applications.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Aryabhatta Knowledge University"
+        },
+        "knowsAbout": ["React.js", "Node.js", "MongoDB", "WebRTC", "Socket.io", "Docker", "JavaScript", "REST APIs", "JWT", "Gemini AI"],
+        "email": "mailto:surajkumar11292@gmail.com",
+        "sameAs": [
+          "https://github.com/surajkumar11292",
+          "https://www.linkedin.com/in/suraj-kumar-1b9a65250/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://surajkumar11292.github.io/#website",
+        "url": "https://surajkumar11292.github.io/",
+        "name": "Suraj Kumar — Portfolio",
+        "publisher": { "@id": "https://surajkumar11292.github.io/#person" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://surajkumar11292.github.io/#webpage",
+        "url": "https://surajkumar11292.github.io/",
+        "name": "Suraj Kumar — Portfolio",
+        "mainEntity": { "@id": "https://surajkumar11292.github.io/#person" },
+        "isPartOf": { "@id": "https://surajkumar11292.github.io/#website" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://surajkumar11292.github.io/#projects-list",
+        "name": "Suraj Kumar — Featured Projects",
+        "itemListElement": [
+          {
+            "@type": "SoftwareApplication",
+            "position": 1,
+            "name": "Chat-App",
+            "applicationCategory": "CommunicationApplication",
+            "operatingSystem": "Web, Docker",
+            "url": "https://chat-app-nl36.onrender.com",
+            "author": { "@id": "https://surajkumar11292.github.io/#person" },
+            "description": "Real-time MERN messaging app with Socket.io, Docker, Clerk Webhooks, and ImageKit media optimization."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 2,
+            "name": "NoShare",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web, Browser",
+            "url": "https://no-share.vercel.app",
+            "author": { "@id": "https://surajkumar11292.github.io/#person" },
+            "description": "Serverless P2P file transfer using WebRTC data channels — zero server storage, 60% lower latency."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 3,
+            "name": "Police-Documentation",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://digital-record-portal.vercel.app",
+            "author": { "@id": "https://surajkumar11292.github.io/#person" },
+            "description": "AI-powered police record portal with RBAC, Gemini 1.5 Flash document parsing, Twilio MFA, and SHA-256 integrity verification."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+
+  <!-- ══════════════════════════════════════════════
+       BOOT LOADER — "DECRYPT"
+  ══════════════════════════════════════════════ -->
+  <div id="ak-loader" role="status" aria-label="Loading Suraj Kumar's portfolio">
+    <div class="akl-kicker" aria-hidden="true">secure session</div>
+
+    <div class="akl-name">
+      <div class="akl-cipher" id="akl-cipher" aria-hidden="true"></div>
+      <div class="akl-wordmark" aria-hidden="true">Suraj <em>Kumar</em></div>
+    </div>
+
+    <div class="akl-readout" aria-hidden="true">
+      <span class="akl-l"><span class="akl-prompt">&rsaquo;</span><span id="akl-line">establishing secure
+          session</span><span class="akl-caret">_</span></span>
+      <span class="akl-pct" id="akl-pct">00%</span>
+    </div>
+
+    <div class="akl-bar" aria-hidden="true"><i id="akl-fill"></i></div>
+
+    <div class="akl-hex" id="akl-hex" aria-hidden="true">0x000000</div>
+
+    <button type="button" class="akl-skip" id="akl-skip" aria-label="Skip intro animation"><kbd>Esc</kbd> Skip</button>
+  </div>
+
+  <script>
+    (function () {
+      var loader = document.getElementById('ak-loader');
+      if (!loader) return;
+
+      var html = document.documentElement;
+      var cipherEl = document.getElementById('akl-cipher');
+      var lineEl = document.getElementById('akl-line');
+      var pctEl = document.getElementById('akl-pct');
+      var fillEl = document.getElementById('akl-fill');
+      var hexEl = document.getElementById('akl-hex');
+      var skipBtn = document.getElementById('akl-skip');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Check session storage frequency capping
+      var hasVisited = false;
+      try {
+        hasVisited = !!sessionStorage.getItem('ak-visited');
+        sessionStorage.setItem('ak-visited', '1');
+      } catch (e) {}
+
+      html.classList.add('akl-lock');
+
+      var TARGET = 'SURAJ KUMAR';
+      var GLYPHS = '0123456789ABCDEF!@#$%&*+=/<>?~^\u2591\u2592\u2588';
+      function g() { return GLYPHS.charAt((Math.random() * GLYPHS.length) | 0); }
+      function hex(n) { var s = ''; for (var i = 0; i < n; i++) s += '0123456789ABCDEF'.charAt((Math.random() * 16) | 0); return s; }
+
+      var chars = [];
+      TARGET.split(' ').forEach(function (word) {
+        var w = document.createElement('span'); w.className = 'akl-word';
+        word.split('').forEach(function (ch) {
+          var s = document.createElement('span'); s.className = 'akl-ch';
+          s.textContent = hasVisited ? ch : g();
+          if (hasVisited) s.classList.add('resolved');
+          w.appendChild(s);
+          chars.push({ el: s, final: ch, done: hasVisited });
+        });
+        if (cipherEl) cipherEl.appendChild(w);
+      });
+
+      var total = chars.length, resolved = hasVisited ? total : 0, started = Date.now();
+      var MIN = (hasVisited || reduce) ? 0 : 3200;
+      var promoted = false;
+      var loaded = (document.readyState === 'complete');
+      var exited = false;
+      var scramble = null;
+      var resolveT = null;
+      var resolveTimeout = null;
+      var promoteTimeout = null;
+      var safetyTimeout = null;
+
+      function setProgress() {
+        var pct = Math.round(resolved / total * 100);
+        if (pctEl) pctEl.textContent = (pct < 10 ? '0' : '') + pct + '%';
+        if (fillEl) fillEl.style.width = pct + '%';
+      }
+
+      function cleanUpTimers() {
+        if (scramble) { clearInterval(scramble); scramble = null; }
+        if (resolveT) { clearInterval(resolveT); resolveT = null; }
+        if (resolveTimeout) { clearTimeout(resolveTimeout); resolveTimeout = null; }
+        if (promoteTimeout) { clearTimeout(promoteTimeout); promoteTimeout = null; }
+        if (safetyTimeout) { clearTimeout(safetyTimeout); safetyTimeout = null; }
+        window.removeEventListener('keydown', handleKeyDown);
+      }
+
+      function exitLoader(isFast) {
+        if (exited) return;
+        exited = true;
+        cleanUpTimers();
+
+        if (isFast) {
+          loader.classList.add('akl-fast');
+        }
+        loader.classList.add('akl-promoted', 'akl-done');
+        html.classList.remove('akl-lock');
+
+        var removalDelay = isFast ? 420 : 820;
+        setTimeout(function () {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, removalDelay);
+      }
+
+      function promote(instant) {
+        if (promoted) return;
+        promoted = true;
+        resolved = total;
+        setProgress();
+        if (lineEl) lineEl.textContent = 'session established \u2713';
+        if (hexEl) hexEl.textContent = '0xACCESS \u00b7 granted';
+        loader.classList.add('akl-promoted');
+        maybeExit();
+      }
+
+      function maybeExit() {
+        if (exited) return;
+        if (!(promoted && loaded)) return;
+        var wait = Math.max(0, MIN - (Date.now() - started));
+        setTimeout(function () {
+          exitLoader(hasVisited || reduce);
+        }, wait);
+      }
+
+      function handleKeyDown(e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          exitLoader(true);
+        }
+      }
+
+      window.addEventListener('keydown', handleKeyDown);
+      if (skipBtn) {
+        skipBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          exitLoader(true);
+        });
+      }
+
+      if (hasVisited) {
+        // Repeat visit in session: snappy 400ms fade
+        loader.classList.add('akl-fast');
+        promote(true);
+        var fastDelay = loaded ? 100 : 250;
+        setTimeout(function () {
+          exitLoader(true);
+        }, fastDelay);
+      } else if (reduce) {
+        promote(true);
+      } else {
+        scramble = setInterval(function () {
+          for (var i = 0; i < chars.length; i++) {
+            if (!chars[i].done) chars[i].el.textContent = g();
+          }
+          if (hexEl) hexEl.textContent = '0x' + hex(6);
+        }, 45);
+
+        if (lineEl) lineEl.textContent = 'decrypting identity';
+
+        var ptr = 0;
+        resolveTimeout = setTimeout(function () {
+          resolveT = setInterval(function () {
+            var c = chars[ptr];
+            if (c) {
+              c.done = true;
+              c.el.textContent = c.final;
+              c.el.classList.add('resolved', 'locked');
+              resolved++;
+              setProgress();
+            }
+            ptr++;
+            if (ptr >= chars.length) {
+              if (resolveT) clearInterval(resolveT);
+              if (scramble) clearInterval(scramble);
+              if (hexEl) hexEl.textContent = '0xKEY \u00b7 verified';
+              promoteTimeout = setTimeout(function () { promote(false); }, 260);
+            }
+          }, 95);
+        }, 360);
+      }
+
+      if (loaded) {
+        maybeExit();
+      } else {
+        window.addEventListener('load', function () {
+          loaded = true;
+          maybeExit();
+        });
+      }
+
+      safetyTimeout = setTimeout(function () {
+        loaded = true;
+        if (!promoted) promote(true);
+        maybeExit();
+      }, 6500);
+    })();
+  </script>
+
+
+  <!-- ══════════════════════════════════════════════
+       PROGRESS BAR
+  ══════════════════════════════════════════════ -->
+  <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════
+       AVAILABILITY BANNER
+  ══════════════════════════════════════════════ -->
+  <div id="avail-banner" role="banner">
+    <span class="banner-pulse" aria-hidden="true"></span>
+    Open to <strong>Full-Stack & Engineering Roles</strong> — MERN &middot; Node.js &middot; React
+    &nbsp;&middot;&nbsp;
+    <a href="#contact">Get in touch ↗</a>
+    <button id="dismiss-banner" aria-label="Dismiss banner">✕</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Suraj Kumar — home">Suraj</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#scanner">Scanner</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="assets/Suraj_Kumar_Resume.pdf" download class="btn btn--outline btn--sm hide-mobile">Resume ↓</a>
+        <a href="#contact" class="btn btn--primary btn--sm hide-mobile">Hire Me</a>
+        <button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme"></button>
+        <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <section id="hero" class="section">
+    <div class="container">
+      <div class="hero-bg-text" aria-hidden="true">S.K</div>
+
+      <div class="hero-content">
+        <!-- Eyebrow -->
+        <div class="hero-greeting fade-up">
+          <span class="dot" aria-hidden="true"></span>
+          Full-Stack Engineer &middot; MERN Stack &middot; Bengaluru
+        </div>
+
+        <!-- Name -->
+        <h1 class="hero-name fade-up" style="transition-delay:0.05s">
+          Suraj<em>Kumar</em>
+        </h1>
+
+        <!-- Dynamic subtitle -->
+        <p class="hero-title-line fade-up" style="transition-delay:0.1s">
+          — <span id="typing-target" class="typing-text" aria-live="polite">Cloud Engineer</span>
+        </p>
+
+        <!-- Description -->
+        <!-- Description -->
+        <p class="hero-desc fade-up" style="transition-delay:0.15s">
+          Full-Stack Software Engineer with production experience building
+          <span class="about-highlight">real-time applications</span>,
+          <span class="about-highlight">P2P systems</span>, and
+          <span class="about-highlight">AI-integrated portals</span> using
+          the MERN stack. I ship things that work in production.
+        </p>
+        <!-- CTAs -->
+        <div class="hero-actions fade-up" style="transition-delay:0.2s">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="https://github.com/surajkumar11292" target="_blank" rel="noopener" class="btn btn--outline">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/suraj-kumar-1b9a65250/" target="_blank" rel="noopener"
+            class="btn btn--outline">LinkedIn ↗</a>
+        </div>
+
+        <!-- Stats row — filled by render.js -->
+        <div class="hero-stats fade-up" id="hero-stats-row" style="transition-delay:0.25s"></div>
+
+        <!-- Contact strip — filled by render.js -->
+        <div class="contact-strip fade-up" id="hero-contact-strip" style="transition-delay:0.3s"></div>
+
+        <!-- Scroll hint -->
+        <div class="scroll-indicator fade-up" style="transition-delay:0.35s" aria-hidden="true">
+          scroll
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee strip -->
+  <div class="marquee-track" aria-hidden="true">
+    <div class="marquee-inner" id="marquee-inner"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section__eyebrow">About</p>
+      <h2 class="section__title">Building at the<br>intersection of <em>code &amp; real-time systems</em></h2>
+
+      <div class="about-grid">
+        <!-- Bio — filled by render.js -->
+        <div>
+          <div class="about-photo-wrap fade-up">
+            <picture>
+              <source srcset="assets/photo.jpg"
+                type="image/jpeg">
+              <img src="assets/photo.jpg"
+                alt="Suraj Kumar" class="about-photo" width="300" height="300" loading="lazy" decoding="async">
+            </picture>
+            <div class="about-photo-badge">
+              <span class="live-indicator"></span>
+              Open to Work
+            </div>
+          </div>
+          <div class="about-text fade-up" id="about-bio"></div>
+        </div>
+        <!-- Right column -->
+        <div>
+          <!-- Currently Learning -->
+          <div class="now-card fade-up">
+            <div class="now-header">
+              <span class="live-indicator" aria-hidden="true"></span>
+              <span class="label-sm">Currently Exploring</span>
+            </div>
+            <div class="now-pills" id="learning-pills"></div>
+          </div>
+
+          <!-- Currently Building -->
+          <div class="building-card fade-up" style="transition-delay:0.05s" id="building-card"></div>
+
+          <!-- GitHub Activity Widget -->
+          <div class="github-widget fade-up" style="transition-delay:0.1s">
+            <div class="github-widget-header">
+              <span class="label-sm">Recent GitHub Activity</span>
+              <a href="https://github.com/surajkumar11292" target="_blank" rel="noopener">View profile ↗</a>
+            </div>
+            <div class="activity-list" id="github-activity-list">
+              <!-- Filled by github.js -->
+            </div>
+            <div id="github-profile-stats"
+              style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-faint);">
+              <!-- Filled by github.js -->
+            </div>
+          </div>
+
+          <!-- GitHub Contribution Heatmap -->
+          <div class="github-heatmap-card fade-up" style="transition-delay:0.18s">
+            <div class="heatmap-header">
+              <div class="heatmap-title-row">
+                <span class="label-sm">Contribution Activity</span>
+                <span class="heatmap-year-toggle">
+                  <button class="heatmap-yr-btn active" data-year="current">This year</button>
+                  <button class="heatmap-yr-btn" data-year="last">Last year</button>
+                </span>
+              </div>
+              <div id="heatmap-summary" class="heatmap-summary">
+                <!-- Filled by github.js -->
+              </div>
+            </div>
+            <div id="github-heatmap" class="heatmap-grid-wrap">
+              <!-- SVG heatmap filled by github.js -->
+              <div class="heatmap-skeleton"></div>
+            </div>
+            <div class="heatmap-legend">
+              <span class="legend-label">Less</span>
+              <span class="legend-cell" data-level="0"></span>
+              <span class="legend-cell" data-level="1"></span>
+              <span class="legend-cell" data-level="2"></span>
+              <span class="legend-cell" data-level="3"></span>
+              <span class="legend-cell" data-level="4"></span>
+              <span class="legend-label">More</span>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <!-- ══════════════════════════════════════════════
+       EXPERIENCE
+  ══════════════════════════════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Experience</p>
+      <h2 class="section__title">Where I've <em>worked</em></h2>
+
+      <!-- Timeline — filled by render.js -->
+      <div class="timeline" id="timeline-container"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Projects</p>
+      <h2 class="section__title">Things I've <em>built</em></h2>
+      <p class="section__subtitle">
+        Click <strong>Case Study</strong> to read the full write-up, or hit <strong>Live Demo</strong> to see the
+        project running in production.
+      </p>
+
+      <!-- Project Controls Toolbar -->
+      <div class="project-toolbar" id="project-toolbar">
+        <div class="project-toolbar-top">
+          <!-- Type Toggle (Independent vs Collaborative) -->
+          <div class="project-type-toggle" id="project-type-toggle" role="tablist" aria-label="Filter projects by ownership type">
+            <button type="button" class="project-type-btn active" data-type="independent" aria-selected="true">Independent Projects</button>
+            <button type="button" class="project-type-btn" data-type="collaborative" aria-selected="false">Collaborative Projects</button>
+          </div>
+
+          <!-- Category Filter Bar (filled by render.js) -->
+          <div class="project-filter-bar" id="project-filter-bar" role="tablist" aria-label="Filter projects by category"></div>
+
+          <!-- View Mode Toggle -->
+          <div class="project-view-toggle" role="group" aria-label="Project layout view">
+            <button type="button" class="project-view-btn active" id="view-cards-btn" data-view="cards" aria-pressed="true">
+              <span class="view-btn-icon">⊞</span> Visual Cards
+            </button>
+            <button type="button" class="project-view-btn" id="view-matrix-btn" data-view="matrix" aria-pressed="false">
+              <span class="view-btn-icon">☰</span> Recruiter Matrix
+            </button>
+          </div>
+        </div>
+
+        <div class="project-toolbar-bottom">
+          <!-- Tech Tag / Keyword Search Bar -->
+          <div class="project-search-wrap">
+            <span class="project-search-icon" aria-hidden="true">⌕</span>
+            <input type="text" id="project-search-input" class="project-search-input"
+              placeholder="Search tech stack, keyword, or role (e.g. Python, Docker, Spring)..."
+              aria-label="Search projects by tech tag or keyword" autocomplete="off" spellcheck="false">
+            <kbd class="search-shortcut" title="Press Ctrl+K or Cmd+K to search">⌘K / Ctrl+K</kbd>
+            <button type="button" class="project-search-clear" id="project-search-clear" aria-label="Clear search query" style="display: none;">✕</button>
+          </div>
+          <div class="project-results-count" id="project-results-count" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="projects-empty-state" id="projects-empty-state" style="display: none;">
+        <div class="empty-state-icon">⚡</div>
+        <h3 class="empty-state-title">No matching projects found</h3>
+        <p class="empty-state-desc" id="empty-state-desc">Try clearing your search query or selecting a different category filter.</p>
+        <button type="button" class="btn btn--outline btn--sm" id="empty-state-reset-btn">Reset All Filters</button>
+      </div>
+
+      <!-- Grid — filled by render.js -->
+      <div class="projects-grid stagger-children" id="projects-grid">
+        <div class="proj-skeleton proj-skeleton--wide"></div>
+        <div class="proj-skeleton"></div>
+        <div class="proj-skeleton"></div>
+      </div>
+
+      <!-- Compact Matrix View — filled by render.js -->
+      <div class="projects-matrix-wrap" id="projects-matrix-wrap" style="display: none;">
+        <table class="projects-matrix-table" id="projects-matrix-table">
+          <thead>
+            <tr>
+              <th scope="col" class="matrix-th matrix-th-title">Project Name</th>
+              <th scope="col" class="matrix-th matrix-th-category">Discipline</th>
+              <th scope="col" class="matrix-th matrix-th-stack">Core Architecture / Stack</th>
+              <th scope="col" class="matrix-th matrix-th-metric">Key Metric</th>
+              <th scope="col" class="matrix-th matrix-th-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projects-matrix-body">
+            <!-- Matrix rows inserted by render.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SITESHIELD LIVE DEMO
+  ══════════════════════════════════════════════ -->
+  <section id="scanner" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Live Demo</p>
+      <h2 class="section__title">See the <em>scanner</em> run</h2>
+      <p class="section__subtitle">
+        A stripped-down, in-browser demo of <strong>SiteShield</strong> — my multi-tenant web
+        security scanner. Enter any domain and watch it grade transport security, HTTP headers,
+        cookies, and information exposure, live.
+      </p>
+
+      <div class="sx" id="sx-root">
+        <div class="sx-toolbar">
+          <div class="sx-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="sx-toolbar-title">siteshield — web security scan</span>
+          <span class="sx-badge">demo</span>
+        </div>
+
+        <div class="sx-body">
+          <div class="sx-form">
+            <div class="sx-input-wrap">
+              <span class="sx-input-icon" aria-hidden="true">⌕</span>
+              <input id="sx-url" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false"
+                placeholder="example.com" aria-label="Domain to scan">
+            </div>
+            <button id="sx-run" class="sx-run" type="button">
+              <span class="sx-run-label">Scan ↵</span>
+              <span class="sx-spin" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="sx-examples" aria-label="Example targets">
+            <button class="sx-chip" type="button" data-url="github.com">github.com</button>
+            <button class="sx-chip" type="button" data-url="example.com">example.com</button>
+            <button class="sx-chip" type="button" data-url="arman-portfolio.online">arman-portfolio.online</button>
+            <button class="sx-chip" type="button" data-url="http://old-login.example">http://old-login.example</button>
+          </div>
+
+          <p class="sx-error" id="sx-error" role="alert"></p>
+
+          <p class="sx-note">
+            <span aria-hidden="true">ℹ</span>
+            <span><b>How this works:</b> the URL is parsed live in your browser; header, cookie and TLS
+              findings illustrate SiteShield's methodology (no third-party servers are contacted here).
+              Run the full engine on your own site →
+              <a href="https://github.com/arman080325/SiteShield-Web" target="_blank" rel="noopener">SiteShield on
+                GitHub</a>.</span>
+          </p>
+
+          <div class="sx-stage" id="sx-stage">
+            <div class="sx-grid">
+              <div class="sx-console" id="sx-console" role="log" aria-live="polite"></div>
+              <div class="sx-report">
+                <div class="sx-score" id="sx-score"></div>
+                <div class="sx-cats" id="sx-cats"></div>
+              </div>
+            </div>
+
+            <div class="sx-cta">
+              <div class="sx-cta-text">
+                <b>This is a taste of the real thing.</b>
+                <span>SiteShield runs these checks server-side with PDF reports, multi-tenant scans, and CI/CD
+                  integration.</span>
+              </div>
+              <a href="https://github.com/arman080325/SiteShield-Web" target="_blank" rel="noopener"
+                class="btn btn--primary btn--sm">View SiteShield ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SKILLS
+  ══════════════════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Skills</p>
+      <h2 class="section__title">Technical <em>toolkit</em></h2>
+
+      <!-- Grid — filled by render.js -->
+      <div class="skills-grid stagger-children" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       EDUCATION
+  ══════════════════════════════════════════════ -->
+  <section id="education" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Education</p>
+      <h2 class="section__title">Academic <em>background</em></h2>
+
+      <!-- Grid — filled by render.js -->
+      <div class="edu-grid" id="edu-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       CERTIFICATIONS
+  ══════════════════════════════════════════════ -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Certifications</p>
+      <h2 class="section__title">Credentials &amp; <em>achievements</em></h2>
+      <!-- Grid — filled by render.js -->
+      <div class="cert-grid stagger-children" id="cert-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       BLOG
+  ══════════════════════════════════════════════ -->
+  <section id="blog" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Writing</p>
+      <h2 class="section__title">Thoughts &amp; <em>tutorials</em></h2>
+      <p class="section__subtitle">
+        Technical write-ups on cloud, DevOps, and ML — things I wish existed when I was learning them.
+      </p>
+      <!-- Grid — filled by render.js -->
+      <div class="blog-grid" id="blog-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <p class="section__eyebrow">Contact</p>
+      <h2 class="section__title">Let's <em>work together</em></h2>
+
+      <div id="visitor-counter-wrap"></div>
+
+      <div class="contact-section-inner">
+
+        <!-- Contact Form -->
+        <div class="contact-form-card fade-up">
+          <div class="contact-card-header">
+            <div class="contact-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-header-text">
+              <h3>Let's <i>Connect</i></h3>
+              <div class="contact-accent-line"></div>
+            </div>
+          </div>
+          
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:2rem;line-height:1.7;">
+            I'm open to internship opportunities, project collaborations, and general conversations about cloud, DevOps,
+            or anything tech. Drop a message below.
+          </p>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <div class="input-wrapper">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address</label>
+                <div class="input-wrapper">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@company.com" required autocomplete="email">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <div class="input-wrapper">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Project Inquiry" required>
+                <svg class="input-icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message</label>
+              <div class="input-wrapper">
+                <svg class="input-icon textarea-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Hi Arman, I came across your portfolio and…" required rows="5"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" id="contact-submit" class="btn-neumorphic" style="width:100%; margin-top: 1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+            <div id="contact-status" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Contact Info — filled by render.js -->
+        <div class="fade-up" style="transition-delay:0.1s">
+          <h3
+            style="font-family:var(--font-display);font-size:1.3rem;font-weight:500;margin-bottom:0.5rem;letter-spacing:-0.02em;">
+            Reach out directly
+          </h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:1.7;">
+            Prefer a direct line? All channels below.
+          </p>
+          <div class="contact-info-list" id="contact-info-links"></div>
+
+          <!-- Quick note -->
+          <div
+            style="margin-top:2rem;padding:1.25rem;background:var(--accent-light);border:1px solid var(--border);border-radius:var(--r-md);">
+            <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;">
+              <strong style="color:var(--accent);">Response time:</strong>
+              I typically reply within 24 hours. For urgent matters, LinkedIn DMs are fastest.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container" id="footer-content">
+      <!-- Filled by render.js -->
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════
+       TOAST NOTIFICATION (injected by ui.js)
+  ══════════════════════════════════════════════ -->
+  <div id="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ══════════════════════════════════════════════
+       AI CHATBOT WIDGET (ThreatScope-adjacent)
+  ══════════════════════════════════════════════ -->
+  <div id="ts-chat-widget">
+    
+    <!-- Floating Bot Sprite -->
+    <div class="ts-bot-container" id="ts-chat-toggle" role="button" aria-label="Toggle AI Assistant" tabindex="0">
+      <div class="ts-bot-glow-layer">
+        <img src="assets/bot/bot-body.png" class="ts-bot-body" alt="">
+        <img src="assets/bot/bot-head.png" class="ts-bot-head" id="ts-bot-head" alt="">
+      </div>
+    </div>
+
+    <!-- Nudge Tooltip -->
+    <div class="ts-nudge-tooltip">Ask me about Arman</div>
+
+    <!-- Chat Panel -->
+    <div class="ts-chat-panel" id="ts-chat-panel" aria-hidden="true">
+      <div class="ts-chat-header">
+        <div style="display: flex; align-items: center;">
+          <div id="ts-avatar-target" style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface); box-shadow: 0 0 15px rgba(98, 218, 235, 0.2); margin-right: 14px;"></div>
+          <div class="ts-header-text">
+            <h3>Ask about Arman</h3>
+            <p>Answers only cover Arman's work</p>
+          </div>
+        </div>
+        <button class="ts-chat-close" id="ts-chat-close" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="ts-chat-body" id="ts-chat-body">
+        <div class="ts-msg-row">
+          <img src="assets/bot/robot-128.png" class="ts-msg-avatar" alt="AI">
+          <div class="ts-msg ts-msg-ai">
+            Hi! I'm Arman's AI portfolio assistant. I can answer any questions you have about his experience, projects, or skills. How can I help you today?
+          </div>
+        </div>
+        <div class="ts-starter-chips" id="ts-starter-chips">
+          <button class="ts-starter-chip">What does Arman build?</button>
+          <button class="ts-starter-chip">Tell me about SiteShield</button>
+          <button class="ts-starter-chip">How do I reach him?</button>
+        </div>
+      </div>
+      
+      <form class="ts-chat-footer" id="ts-chat-form">
+        <div class="ts-chat-input-wrapper">
+          <input type="text" class="ts-chat-input" id="ts-chat-input" placeholder="Message..." autocomplete="off">
+          <button type="submit" class="ts-chat-send" id="ts-chat-send" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       SCRIPTS — load order matters
+  ══════════════════════════════════════════════ -->
+  <script defer src="js/data.js"></script>
+  <script defer src="js/icons.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/modal.js"></script>
+  <script defer src="js/github.js"></script>
+  <script defer src="js/contact.js"></script>
+  <script defer src="js/render.js"></script>
+  <script defer src="js/scanner.js"></script>
+  <script defer src="js/terminal.js"></script>
+  <script defer src="js/transitions.js"></script>
+  <script defer src="js/chat.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</body>
+
+</html>

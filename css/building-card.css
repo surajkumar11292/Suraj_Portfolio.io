@@ -1,0 +1,152 @@
+/* ── Currently Building Card ───────────────────────────────── */
+
+.building-card {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--bg-card);
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--t-slow), border-color var(--t-slow);
+}
+
+.building-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.building-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.building-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+.building-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: var(--r-full);
+  background: var(--accent);
+  animation: building-blink 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes building-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+.building-status-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--r-full);
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid var(--border-faint);
+  font-family: var(--font-body);
+  transition: background var(--t-slow), color var(--t-slow);
+}
+
+.building-status-badge.almost-done {
+  background: var(--accent2-light);
+  color: var(--accent2);
+  border-color: var(--accent2-light);
+}
+
+.building-status-badge.shipped {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--success);
+  border-color: rgba(34, 197, 94, 0.15);
+}
+
+.building-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 0.25rem;
+  line-height: 1.4;
+  font-family: var(--font-body);
+  transition: color var(--t-slow);
+}
+
+.building-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-body);
+  transition: color var(--t-slow);
+}
+
+.building-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.building-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.building-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--r-full);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-root);
+  font-family: var(--font-mono);
+  transition: background var(--t-slow), color var(--t-slow), border-color var(--t-slow);
+}
+.building-tag .tech-icon {
+  width: 11px;
+  height: 11px;
+}
+
+.building-since {
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  transition: color var(--t-slow);
+}
+
+/* Terminal theme — glow effect */
+[data-theme="terminal"] .building-card {
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.06);
+}
+[data-theme="terminal"] .building-card::before {
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.6;
+}
+[data-theme="terminal"] .building-dot {
+  box-shadow: 0 0 6px var(--accent);
+}
