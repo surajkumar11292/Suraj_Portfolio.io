@@ -1,22 +1,22 @@
 {
-  "name": "arman-claude-final",
+  "name": "suraj-kumar-portfolio",
   "version": "1.0.0",
-  "description": "<div align=\"center\">",
+  "description": "Personal portfolio of Suraj Kumar — Full-Stack Software Engineer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arman080325/Arman-Portfolio.git"
+    "url": "git+https://github.com/surajkumar11292/surajkumar11292.github.io.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["portfolio", "full-stack", "mern", "react", "nodejs"],
+  "author": "Suraj Kumar <surajkumar11292@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/arman080325/Arman-Portfolio/issues"
+    "url": "https://github.com/surajkumar11292/surajkumar11292.github.io/issues"
   },
-  "homepage": "https://github.com/arman080325/Arman-Portfolio#readme",
+  "homepage": "https://surajkumar11292.github.io",
   "dependencies": {
     "@google/genai": "^2.17.1",
     "@upstash/ratelimit": "^2.0.8",

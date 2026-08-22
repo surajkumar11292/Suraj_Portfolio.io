@@ -25,7 +25,7 @@ const UI = (() => {
     TOASTS: {
       light:    '☀ Light mode',
       dark:     '◑ Dark mode',
-      terminal: '> 𖤍 Terminal mode — arman in.'
+      terminal: '> 𖤍 Terminal mode — suraj in.'
     },
 
     init() {
