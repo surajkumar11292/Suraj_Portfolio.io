@@ -93,8 +93,8 @@ const Transitions = (() => {
     const h1 = document.querySelector('.hero-name');
     if (!h1) return;
 
-    // The h1 has: "Arman Ahemad" as text + <em>Khan</em>
-    // We want two lines: line1 = "Arman Ahemad", line2 = em
+    // The h1 has: "Suraj" as text + <em>Kumar</em>
+    // We want two lines: line1 = "Suraj", line2 = em
     const children = Array.from(h1.childNodes);
     h1.innerHTML = '';
 

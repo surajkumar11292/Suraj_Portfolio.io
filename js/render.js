@@ -246,7 +246,7 @@ const FSOCIETY_HERO = `
           <circle class="fs-dot fs-dot-r" cx="38" cy="57" r="3.2"/>
           <circle class="fs-dot fs-dot-y" cx="48" cy="57" r="3.2"/>
           <circle class="fs-dot fs-dot-g" cx="58" cy="57" r="3.2"/>
-          <text class="fs-term-title" x="120" y="61">armanxploits@fsociety:~$</text>
+          <text class="fs-term-title" x="120" y="61">suraj@portfolio:~$</text>
 
           <g class="fs-rain" clip-path="url(#fsClip)">
             <text class="fs-rain-col" x="40" y="70">01<tspan x="40" dy="14">10</tspan><tspan x="40" dy="14">11</tspan><tspan x="40" dy="14">00</tspan><tspan x="40" dy="14">10</tspan><tspan x="40" dy="14">01</tspan><tspan x="40" dy="14">11</tspan>
@@ -639,7 +639,7 @@ const SNAPURL_HERO = `
           
           <!-- Long URL Input Box -->
           <rect x="35" y="65" width="170" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1.2"/>
-          <text class="ga-cmd-text" x="42" y="80" font-size="9" fill="var(--text-secondary)">Long: https://arman.com/super/long/url</text>
+          <text class="ga-cmd-text" x="42" y="80" font-size="9" fill="var(--text-secondary)">Long: https://suraj.dev/super/long/url</text>
 
           <!-- Down Arrow / Process Flow -->
           <path d="M 120 87 L 120 115" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="2 3" />
