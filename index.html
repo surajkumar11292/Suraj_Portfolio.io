@@ -10,7 +10,7 @@
   <meta name="description"
     content="Suraj Kumar — Full-Stack Software Engineer. Builder of Chat-App, NoShare P2P, and Police-Documentation AI portal. MERN · WebRTC · Docker.">
   <meta name="keywords"
-    content="Suraj Kumar portfolio, Suraj Kumar, Full-Stack Developer, MERN Stack, React, Node.js, WebRTC, Socket.io, Docker, JavaScript, MongoDB">
+    content="Suraj Kumar portfolio, Suraj Kumar, Full-Stack Developer, MERN Stack, React, Node.js, WebRTC, Socket.io, Docker, JavaScript, MongoDB, Bengaluru">
   <meta name="author" content="Suraj Kumar">
 
   <!-- Open Graph -->
@@ -46,6 +46,7 @@
        3. Download ZIP → extract into your assets/ folder
        4. The <link> tags below will work automatically.
   ──────────────────────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -69,7 +70,6 @@
   <link rel="stylesheet" href="css/transitions.css">
   <link rel="stylesheet" href="css/building-card.css">
   <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/scanner.css">
   <link rel="stylesheet" href="css/project-hero.css">
   <link rel="stylesheet" href="css/chat.css">
 
@@ -735,17 +735,18 @@
   ══════════════════════════════════════════════ -->
   <nav id="main-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Suraj Kumar — home">Suraj</a>
+      <a href="#hero" class="nav-logo" aria-label="Suraj Kumar — home">
+        <img src="assets/logo.svg" alt="Suraj Kumar Logo" class="nav-logo-icon" width="32" height="32">
+        <span class="nav-logo-text">Suraj<b>Kumar</b></span>
+      </a>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#scanner">Scanner</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#certifications">Certs</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -771,7 +772,7 @@
         <!-- Eyebrow -->
         <div class="hero-greeting fade-up">
           <span class="dot" aria-hidden="true"></span>
-          Full-Stack Engineer &middot; MERN Stack
+          Full-Stack Engineer &middot; MERN Stack &middot; Bengaluru
         </div>
 
         <!-- Name -->
@@ -981,84 +982,7 @@
     </div>
   </section>
 
-  <div class="divider"></div>
 
-  <!-- ══════════════════════════════════════════════
-       SITESHIELD LIVE DEMO
-  ══════════════════════════════════════════════ -->
-  <section id="scanner" class="section">
-    <div class="container">
-      <p class="section__eyebrow">Live Demo</p>
-      <h2 class="section__title">See the <em>scanner</em> run</h2>
-      <p class="section__subtitle">
-        A stripped-down, in-browser demo of <strong>SiteShield</strong> — my multi-tenant web
-        security scanner. Enter any domain and watch it grade transport security, HTTP headers,
-        cookies, and information exposure, live.
-      </p>
-
-      <div class="sx" id="sx-root">
-        <div class="sx-toolbar">
-          <div class="sx-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span class="sx-toolbar-title">siteshield — web security scan</span>
-          <span class="sx-badge">demo</span>
-        </div>
-
-        <div class="sx-body">
-          <div class="sx-form">
-            <div class="sx-input-wrap">
-              <span class="sx-input-icon" aria-hidden="true">⌕</span>
-              <input id="sx-url" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false"
-                placeholder="example.com" aria-label="Domain to scan">
-            </div>
-            <button id="sx-run" class="sx-run" type="button">
-              <span class="sx-run-label">Scan ↵</span>
-              <span class="sx-spin" aria-hidden="true"></span>
-            </button>
-          </div>
-
-          <div class="sx-examples" aria-label="Example targets">
-            <button class="sx-chip" type="button" data-url="github.com">github.com</button>
-            <button class="sx-chip" type="button" data-url="example.com">example.com</button>
-            <button class="sx-chip" type="button" data-url="surajkumar11292.github.io">surajkumar11292.github.io</button>
-            <button class="sx-chip" type="button" data-url="http://old-login.example">http://old-login.example</button>
-          </div>
-
-          <p class="sx-error" id="sx-error" role="alert"></p>
-
-          <p class="sx-note">
-            <span aria-hidden="true">ℹ</span>
-            <span><b>How this works:</b> the URL is parsed live in your browser; header, cookie and TLS
-              findings illustrate SiteShield's methodology (no third-party servers are contacted here).
-              Run the full engine on your own site →
-              <a href="https://github.com/surajkumar11292" target="_blank" rel="noopener">View on GitHub</a>.
-          </span>
-          </p>
-
-          <div class="sx-stage" id="sx-stage">
-            <div class="sx-grid">
-              <div class="sx-console" id="sx-console" role="log" aria-live="polite"></div>
-              <div class="sx-report">
-                <div class="sx-score" id="sx-score"></div>
-                <div class="sx-cats" id="sx-cats"></div>
-              </div>
-            </div>
-
-            <div class="sx-cta">
-              <div class="sx-cta-text">
-                <b>This is a taste of the real thing.</b>
-                <span>SiteShield runs these checks server-side with PDF reports, multi-tenant scans, and CI/CD
-                  integration.</span>
-              </div>
-              <a href="https://github.com/surajkumar11292" target="_blank" rel="noopener"
-                class="btn btn--primary btn--sm">View on GitHub ↗</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
 
   <!-- ══════════════════════════════════════════════
        SKILLS
@@ -1102,24 +1026,7 @@
     </div>
   </section>
 
-  <div class="divider"></div>
 
-  <!-- ══════════════════════════════════════════════
-       BLOG
-  ══════════════════════════════════════════════ -->
-  <section id="blog" class="section">
-    <div class="container">
-      <p class="section__eyebrow">Writing</p>
-      <h2 class="section__title">Thoughts &amp; <em>tutorials</em></h2>
-      <p class="section__subtitle">
-        Technical write-ups on cloud, DevOps, and ML — things I wish existed when I was learning them.
-      </p>
-      <!-- Grid — filled by render.js -->
-      <div class="blog-grid" id="blog-grid"></div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
 
   <!-- ══════════════════════════════════════════════
        CONTACT
@@ -1304,7 +1211,6 @@
   <script defer src="js/github.js"></script>
   <script defer src="js/contact.js"></script>
   <script defer src="js/render.js"></script>
-  <script defer src="js/scanner.js"></script>
   <script defer src="js/terminal.js"></script>
   <script defer src="js/transitions.js"></script>
   <script defer src="js/chat.js"></script>

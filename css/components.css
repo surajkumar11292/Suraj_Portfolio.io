@@ -110,12 +110,39 @@
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
+  transition: transform var(--t-fast);
+}
+
+.nav-logo-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: transform var(--t-normal), filter var(--t-normal);
+}
+
+.nav-logo:hover .nav-logo-icon {
+  transform: rotate(6deg) scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(98, 218, 235, 0.5));
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-logo-text b {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+  margin-left: 2px;
 }
 
 .nav-links {

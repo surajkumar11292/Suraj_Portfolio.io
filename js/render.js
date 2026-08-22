@@ -104,7 +104,7 @@ const Renderer = (() => {
           <div class="timeline-body" data-period="${job.period}${job.duration ? " · " + job.duration : ""}">
             <div class="timeline-role">${job.role}</div>
             <div class="timeline-company">
-              ${job.company} <span>· ${job.location}</span>
+              ${job.company}${job.location ? ` <span>· ${job.location}</span>` : ""}
             </div>
             <ul class="timeline-bullets">${bullets}</ul>
             <div class="timeline-tags">${tags}</div>
@@ -284,7 +284,7 @@ const PF_HERO = `
           <circle class="pf-dot pf-dot-r" cx="38" cy="57" r="3.2"/>
           <circle class="pf-dot pf-dot-y" cx="48" cy="57" r="3.2"/>
           <circle class="pf-dot pf-dot-g" cx="58" cy="57" r="3.2"/>
-          <text class="pf-url-text" x="128" y="61">🔒 your-portfolio.dev</text>
+          <text class="pf-url-text" x="128" y="61" font-size="8.5">🔒 suraj-portfolio-io.vercel.app</text>
 
           <g class="pf-device pf-device-desktop" transform="translate(46,80)">
             <rect class="pf-screen" x="0" y="0" width="78" height="50" rx="4"/>
@@ -313,7 +313,152 @@ const PF_HERO = `
             <path class="ph-check" style="animation-delay:0.6s" d="M139 178 l3 4 l7 -8"/>
           </g>
         </svg>
-        <a class="ph-live" href="https://github.com/surajkumar11292" target="_blank" rel="noopener noreferrer">▶ View on GitHub</a>
+        <a class="ph-live" href="https://suraj-portfolio-io.vercel.app/" target="_blank" rel="noopener noreferrer">▶ View live site</a>
+      </div>`;
+
+const CHAT_HERO = `
+      <div class="ph-visual" aria-hidden="true">
+        <span class="ph-badge">◆ Live Socket.io</span>
+        <svg class="ph-radar" viewBox="0 0 240 240" role="img" aria-label="Real-time WebSocket chat animation">
+          <!-- Window frame -->
+          <rect class="ph-outline" x="24" y="38" width="192" height="168" rx="12" fill="none"/>
+          <rect class="pf-browser-bar" x="25" y="39" width="190" height="22" rx="11"/>
+          <circle class="pf-dot pf-dot-r" cx="38" cy="50" r="3.2"/>
+          <circle class="pf-dot pf-dot-y" cx="48" cy="50" r="3.2"/>
+          <circle class="pf-dot pf-dot-g" cx="58" cy="50" r="3.2"/>
+          <text class="pf-url-text" x="130" y="54" font-size="8.5">⚡ Chat-App · Socket.io</text>
+
+          <!-- Chat bubble 1 (incoming) -->
+          <g transform="translate(36, 72)">
+            <rect x="0" y="0" width="125" height="24" rx="8" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1"/>
+            <text x="10" y="16" font-size="8" fill="var(--text-secondary)" font-family="var(--font-mono)">Hey, is Socket.io live?</text>
+          </g>
+
+          <!-- Chat bubble 2 (outgoing / response) -->
+          <g transform="translate(76, 104)">
+            <rect x="0" y="0" width="125" height="24" rx="8" fill="var(--accent)" opacity="0.9"/>
+            <text x="10" y="16" font-size="8" fill="#041614" font-weight="bold" font-family="var(--font-mono)">Sub-10ms delivery 🚀</text>
+          </g>
+
+          <!-- Typing indicator bubble -->
+          <g transform="translate(36, 136)">
+            <rect x="0" y="0" width="55" height="20" rx="8" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1"/>
+            <circle cx="16" cy="10" r="2.8" fill="var(--accent)">
+              <animate attributeName="cy" values="10;6;10" dur="1.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="28" cy="10" r="2.8" fill="var(--accent)">
+              <animate attributeName="cy" values="10;6;10" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="40" cy="10" r="2.8" fill="var(--accent)">
+              <animate attributeName="cy" values="10;6;10" dur="1.2s" begin="0.4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Live delivery badge -->
+          <g transform="translate(155, 150)">
+            <circle class="pf-badge-sm" cx="20" cy="20" r="12"/>
+            <path class="ph-check" d="M14 20 l4 4 l8 -8"/>
+          </g>
+        </svg>
+        <a class="ph-live" href="https://chat-app-nl36.onrender.com" target="_blank" rel="noopener noreferrer">▶ View live app</a>
+      </div>`;
+
+const NOSHARE_HERO = `
+      <div class="ph-visual" aria-hidden="true">
+        <span class="ph-badge">◆ Live P2P WebRTC</span>
+        <svg class="ph-radar" viewBox="0 0 240 240" role="img" aria-label="WebRTC peer to peer transfer animation">
+          <!-- Main Frame -->
+          <rect class="ph-outline" x="24" y="38" width="192" height="168" rx="12" fill="none"/>
+          <rect class="pf-browser-bar" x="25" y="39" width="190" height="22" rx="11"/>
+          <circle class="pf-dot pf-dot-r" cx="38" cy="50" r="3.2"/>
+          <circle class="pf-dot pf-dot-y" cx="48" cy="50" r="3.2"/>
+          <circle class="pf-dot pf-dot-g" cx="58" cy="50" r="3.2"/>
+          <text class="pf-url-text" x="130" y="54" font-size="8.5">🌐 NoShare · Serverless P2P</text>
+
+          <!-- Peer A node -->
+          <g transform="translate(56, 95)">
+            <circle r="18" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.8"/>
+            <text x="0" y="4" text-anchor="middle" font-size="8" font-weight="bold" fill="var(--text-primary)" font-family="var(--font-mono)">PEER A</text>
+            <circle class="bk-lock-pulse" r="18"><animate attributeName="r" values="18;28" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.4s" repeatCount="indefinite"/></circle>
+          </g>
+
+          <!-- Peer B node -->
+          <g transform="translate(184, 95)">
+            <circle r="18" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.8"/>
+            <text x="0" y="4" text-anchor="middle" font-size="8" font-weight="bold" fill="var(--text-primary)" font-family="var(--font-mono)">PEER B</text>
+            <circle class="bk-lock-pulse" r="18"><animate attributeName="r" values="18;28" dur="2.4s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle>
+          </g>
+
+          <!-- Curved Connection channel -->
+          <path id="p2pChannel" d="M 74 95 Q 120 70 166 95" fill="none" stroke="var(--border)" stroke-width="2" stroke-dasharray="3 3"/>
+
+          <!-- Animated flowing packet -->
+          <circle r="4.5" fill="#62DAEB">
+            <animateMotion dur="1.8s" repeatCount="indefinite" path="M 74 95 Q 120 70 166 95" />
+          </circle>
+
+          <!-- Progress status box -->
+          <g transform="translate(42, 134)">
+            <rect x="0" y="0" width="156" height="28" rx="6" fill="var(--bg-card)" stroke="var(--border-faint)" stroke-width="1"/>
+            <text x="12" y="12" font-size="7.5" fill="var(--text-secondary)" font-family="var(--font-mono)">P2P Direct · 0B Server Storage</text>
+            <!-- Progress bar -->
+            <rect x="12" y="17" width="132" height="5" rx="2.5" fill="var(--bg-surface)"/>
+            <rect x="12" y="17" width="92" height="5" rx="2.5" fill="var(--accent)"/>
+          </g>
+
+          <!-- Success checkmark -->
+          <circle class="pf-badge-sm" cx="178" cy="172" r="10"/>
+          <path class="ph-check" d="M173 172 l3 4 l7 -8"/>
+        </svg>
+        <a class="ph-live" href="https://no-share.vercel.app" target="_blank" rel="noopener noreferrer">▶ View live app</a>
+      </div>`;
+
+const POLICE_HERO = `
+      <div class="ph-visual" aria-hidden="true">
+        <span class="ph-badge">◆ Live AI Portal</span>
+        <svg class="ph-radar" viewBox="0 0 240 240" role="img" aria-label="AI document parsing portal animation">
+          <!-- Window frame -->
+          <rect class="ph-outline" x="24" y="38" width="192" height="168" rx="12" fill="none"/>
+          <rect class="pf-browser-bar" x="25" y="39" width="190" height="22" rx="11"/>
+          <circle class="pf-dot pf-dot-r" cx="38" cy="50" r="3.2"/>
+          <circle class="pf-dot pf-dot-y" cx="48" cy="50" r="3.2"/>
+          <circle class="pf-dot pf-dot-g" cx="58" cy="50" r="3.2"/>
+          <text class="pf-url-text" x="130" y="54" font-size="8.5">📑 Police-Docs · Gemini 1.5</text>
+
+          <!-- Document outline with scanning laser beam -->
+          <g transform="translate(42, 70)">
+            <rect x="0" y="0" width="56" height="74" rx="4" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1.2"/>
+            <line x1="8" y1="14" x2="48" y2="14" stroke="var(--border-faint)" stroke-width="2"/>
+            <line x1="8" y1="24" x2="40" y2="24" stroke="var(--border-faint)" stroke-width="2"/>
+            <line x1="8" y1="34" x2="44" y2="34" stroke="var(--border-faint)" stroke-width="2"/>
+            <line x1="8" y1="44" x2="36" y2="44" stroke="var(--border-faint)" stroke-width="2"/>
+            <line x1="8" y1="54" x2="48" y2="54" stroke="var(--border-faint)" stroke-width="2"/>
+            
+            <!-- Laser scan line animating up/down -->
+            <line x1="2" y1="6" x2="54" y2="6" stroke="#62DAEB" stroke-width="2" opacity="0.85">
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,60; 0,0" dur="2.8s" repeatCount="indefinite"/>
+            </line>
+          </g>
+
+          <!-- Extracted Fields list -->
+          <g transform="translate(108, 72)">
+            <rect x="0" y="0" width="90" height="20" rx="4" fill="var(--bg-card)" stroke="var(--border-faint)" stroke-width="1"/>
+            <text x="8" y="13" font-size="7.5" fill="var(--accent)" font-family="var(--font-mono)">Case: #8821-AK</text>
+            
+            <rect x="0" y="26" width="90" height="20" rx="4" fill="var(--bg-card)" stroke="var(--border-faint)" stroke-width="1"/>
+            <text x="8" y="39" font-size="7.5" fill="var(--text-secondary)" font-family="var(--font-mono)">MFA: Verified ✓</text>
+
+            <rect x="0" y="52" width="90" height="20" rx="4" fill="var(--bg-card)" stroke="var(--border-faint)" stroke-width="1"/>
+            <text x="8" y="65" font-size="7.5" fill="var(--text-secondary)" font-family="var(--font-mono)">SHA-256: Valid ✓</text>
+          </g>
+
+          <!-- Status badge -->
+          <g transform="translate(42, 154)">
+            <rect x="0" y="0" width="156" height="20" rx="4" fill="var(--bg-surface)" stroke="var(--accent-light)" stroke-width="1"/>
+            <text x="12" y="13" font-size="7.5" fill="var(--accent)" font-weight="bold" font-family="var(--font-mono)">AI Extraction Complete · RBAC Secured</text>
+          </g>
+        </svg>
+        <a class="ph-live" href="https://digital-record-portal.vercel.app" target="_blank" rel="noopener noreferrer">▶ View live portal</a>
       </div>`;
 
 const DISEASE_HERO = `
@@ -725,6 +870,10 @@ const SNAPURL_HERO = `
       </div>`;
 
     const HERO_VISUALS = {
+      "portfolio-site": PF_HERO,
+      chatapp: CHAT_HERO,
+      noshare: NOSHARE_HERO,
+      "police-documentation": POLICE_HERO,
       "dread-project": DREAD_HERO,
       gitatlas: GITATLAS_HERO,
       snapurl: SNAPURL_HERO,
@@ -732,7 +881,6 @@ const SNAPURL_HERO = `
       student: STUDENT_HERO,
       bank: BANK_HERO,
       "fsociety-web": FSOCIETY_HERO,
-      "portfolio-site": PF_HERO,
       "disease-ml": DISEASE_HERO,
       cineroulette: CINEROULETTE_HERO,
       lifeos: LIFEOS_HERO,
@@ -1335,7 +1483,10 @@ const SNAPURL_HERO = `
       "footer-content",
       `
       <div class="footer-inner">
-        <span class="footer-logo">${d.shortName}</span>
+        <span class="footer-logo" style="display:inline-flex;align-items:center;gap:0.5rem;">
+          <img src="assets/logo.svg" alt="Logo" width="22" height="22" style="border-radius:6px;vertical-align:middle;" />
+          ${d.name}
+        </span>
         <ul class="footer-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -1419,7 +1570,6 @@ const SNAPURL_HERO = `
         ["skills", renderSkills],
         ["education", renderEducation],
         ["certifications", renderCertifications],
-        ["blog", renderBlog],
         ["contact", renderContact],
         ["visitorCounter", renderVisitorCounter],
         ["footer", renderFooter],

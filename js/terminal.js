@@ -138,7 +138,7 @@ const Terminal = (() => {
       const lines = [nl()];
       data.experience.forEach((job, idx) => {
         lines.push(`  ${g('◆')} ${b(job.role)}`);
-        lines.push(`    ${c(job.company)} ${d('·')} ${d(job.location)}`);
+        lines.push(job.location ? `    ${c(job.company)} ${d('·')} ${d(job.location)}` : `    ${c(job.company)}`);
         lines.push(`    ${d(job.period)} ${d('(')}${y(job.duration)}${d(')')}`);
         lines.push(nl());
         (job.bullets || []).slice(0, 3).forEach(bullet => {

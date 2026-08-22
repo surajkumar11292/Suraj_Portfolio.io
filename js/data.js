@@ -8,9 +8,9 @@ const PORTFOLIO_DATA = {
   name: "Suraj Kumar",
   shortName: "Suraj",
   title: "Full-Stack Developer · React · Node.js",
-  tagline: "Full-Stack Software Engineer",
+  tagline: "Full-Stack Software Engineer, Bengaluru",
   bio: [
-    "I'm a Full-Stack Software Engineer with hands-on professional experience building <span class='about-highlight'>production-grade web applications</span> using the <span class='about-highlight'>MERN stack</span> — from school management portals to real-time messaging ecosystems.",
+    "I'm a Full-Stack Software Engineer based in Bengaluru with hands-on professional experience building <span class='about-highlight'>production-grade web applications</span> using the <span class='about-highlight'>MERN stack</span> — from school management portals to real-time messaging ecosystems.",
 
     "I specialize in architecting end-to-end systems: responsive React frontends, scalable Node.js backends, secure REST APIs with JWT & RBAC, and real-time features via WebSockets and WebRTC. I've shipped features used by real users at <em>Earth Services</em>, integrated AI APIs (Gemini 1.5 Flash), and built P2P file-sharing platforms with zero server storage cost.",
 
@@ -25,7 +25,7 @@ const PORTFOLIO_DATA = {
     phone: "+91 7258025793",
     github: "https://github.com/surajkumar11292",
     linkedin: "https://www.linkedin.com/in/suraj-kumar-1b9a65250/",
-    location: "India",
+    location: "Bengaluru, India",
   },
 
   /* ── STATS ─────────────────────────────────────────────────── */
@@ -54,7 +54,6 @@ const PORTFOLIO_DATA = {
       id: "earth-services-2024",
       role: "Full-Stack Software Engineer",
       company: "Earth Services",
-      location: "India",
       period: "Nov 2024 — Mar 2026",
       duration: "16 months",
       bullets: [
@@ -94,6 +93,35 @@ const PORTFOLIO_DATA = {
 
   /* ── PROJECTS ──────────────────────────────────────────────── */
   projects: [
+    {
+      id: "portfolio-site",
+      category: "Frontend · Performance",
+      title: "Personal Portfolio Website",
+      desc: "A responsive developer portfolio scoring 95+ on Google Lighthouse across all categories, with dark/light themes, terminal emulator, SEO optimization, and fine-tuned performance. Live on Vercel.",
+      metric: "95+ Lighthouse · Sub-second CDN",
+      period: "2026",
+      featured: true,
+      hero: true,
+      tags: ["HTML5", "CSS3", "JavaScript", "Vercel", "SEO"],
+      github: "https://github.com/surajkumar11292/Suraj_Portfolio.io",
+      repo: "Suraj_Portfolio.io",
+      demo: "https://suraj-portfolio-io.vercel.app/",
+      casestudy: {
+        problem:
+          "Creating a developer portfolio that stands out visually with animations, glassmorphism, and responsive interactivity — without relying on heavy frameworks that hurt Lighthouse performance or introduce cold starts.",
+        approach:
+          "Engineered the entire application with vanilla JavaScript, modern CSS custom properties, and semantic HTML5. Implemented a data-driven architecture where all content lives in a structured data layer, paired with dynamic DOM rendering, custom CSS keyframe animations, and client-side theme switching. Deployed to Vercel's global Edge CDN for instantaneous worldwide delivery.",
+        challenges: [
+          "Delivering rich SVG animations, custom terminal commands, and particle visuals while maintaining 95+ Lighthouse scores",
+          "Designing a consistent dark/light/terminal theme token system without CSS flashes during page transitions",
+          "Building fully accessible modals, responsive layouts, and interactive components with zero external framework dependencies",
+        ],
+        outcome:
+          "A live, high-performance personal portfolio at suraj-portfolio-io.vercel.app with 95+ Lighthouse performance scores, instant page loads, and responsive design across all screen sizes.",
+        lessons:
+          "Vanilla web technologies, when architected properly with modular component patterns, deliver superior performance and load speeds compared to heavy client-side JavaScript bundles.",
+      },
+    },
     {
       id: "chatapp",
       category: "Full-Stack · Real-Time",
