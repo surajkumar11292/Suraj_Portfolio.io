@@ -1345,7 +1345,7 @@ const SNAPURL_HERO = `
     mount("edu-grid", html);
   }
 
-  /* ── CONTACT SECTION ───────────────────────────────────────── */
+  /* ── CONTACT ───────────────────────────────────────────────── */
   function renderContact() {
     const d = PORTFOLIO_DATA.contact || {};
     const links = [
@@ -1354,7 +1354,6 @@ const SNAPURL_HERO = `
         label: d.email,
         href: `mailto:${d.email}`,
       },
-
       {
         icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>`,
         label: "github.com/surajkumar11292",
@@ -1370,17 +1369,24 @@ const SNAPURL_HERO = `
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`,
         label: d.location,
-        href: "#",
+        isStatic: true,
       },
     ]
-      .map(
-        (link) => `
-      <a href="${link.href}" ${link.external ? 'target="_blank" rel="noopener"' : ""}
-         class="contact-info-item">
-        ${link.icon}
-        ${link.label}
-      </a>`,
-      )
+      .map((link) => {
+        if (link.isStatic) {
+          return `
+            <div class="contact-info-item" style="cursor:default;user-select:text;">
+              ${link.icon}
+              ${link.label}
+            </div>`;
+        }
+        return `
+          <a href="${link.href}" ${link.external ? 'target="_blank" rel="noopener"' : ""}
+             class="contact-info-item">
+            ${link.icon}
+            ${link.label}
+          </a>`;
+      })
       .join("");
 
     mount("contact-info-links", links);
@@ -1483,10 +1489,10 @@ const SNAPURL_HERO = `
       "footer-content",
       `
       <div class="footer-inner">
-        <span class="footer-logo" style="display:inline-flex;align-items:center;gap:0.5rem;">
+        <a href="#hero" class="footer-logo" style="display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;cursor:pointer;" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});" aria-label="Scroll to top">
           <img src="assets/logo.svg" alt="Logo" width="22" height="22" style="border-radius:6px;vertical-align:middle;" />
-          ${d.name}
-        </span>
+          <span style="color:var(--text-primary);font-weight:600;">${d.name}</span>
+        </a>
         <ul class="footer-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>

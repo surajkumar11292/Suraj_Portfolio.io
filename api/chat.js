@@ -145,13 +145,18 @@ module.exports = async function handler(req, res) {
       cleanContents.push({ role, parts: [{ text: msg.text }] });
     }
 
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'AI service configuration missing. Please configure GEMINI_API_KEY in environment variables.' });
+    }
+    const ai = new GoogleGenAI({ apiKey });
     
     // Model fallback logic
     const modelsToTry = [
-      process.env.GEMINI_MODEL || "gemini-3.1-flash-lite",
-      "gemini-3.5-flash-lite",
-      "gemini-flash-latest"
+      process.env.GEMINI_MODEL || "gemini-2.5-flash",
+      "gemini-2.0-flash",
+      "gemini-1.5-flash",
+      "gemini-1.5-pro"
     ];
 
     let finalSystemInstruction = SYSTEM_INSTRUCTION;
