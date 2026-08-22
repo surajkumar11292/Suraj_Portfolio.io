@@ -121,7 +121,7 @@ MyPortfolio/
 ## 📬 Contact & Connect
 
 - **Portfolio:** [suraj-portfolio-io.vercel.app](https://suraj-portfolio-io.vercel.app/)
-- **Email:** [surajkumar11292@gmail.com](mailto:surajkumar11292@gmail.com)
+- **Email:** [surajkumar11292@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=surajkumar11292@gmail.com)
 - **GitHub:** [@surajkumar11292](https://github.com/surajkumar11292)
 - **LinkedIn:** [Suraj Kumar](https://www.linkedin.com/in/suraj-kumar-1b9a65250/)
 
