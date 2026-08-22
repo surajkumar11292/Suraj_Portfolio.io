@@ -1382,7 +1382,7 @@ const SNAPURL_HERO = `
         }
         return `
           <a href="${link.href}" ${link.external ? 'target="_blank" rel="noopener"' : ""}
-             class="contact-info-item">
+             class="contact-info-item" ${link.href.startsWith("mailto:") ? `onclick="window.location.href='${link.href}'"` : ""}>
             ${link.icon}
             ${link.label}
           </a>`;
