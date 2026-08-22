@@ -45,7 +45,7 @@ Keep answers to 2-4 sentences unless asked for detail. Write in plain, warm, dir
 
 --- PROFILE ---
 **Bio & Background**
-Suraj Kumar is a Full-Stack Software Engineer based in Bengaluru, India.
+Suraj Kumar is a Full-Stack Software Engineer.
 He has a Bachelor of Computer Applications (BCA) from Aryabhatta Knowledge University (CGPA 8.08).
 He has 16 months of professional experience at Earth Services (Nov 2024 — Mar 2026) building school management portals and CRMs with the MERN stack.
 
@@ -69,7 +69,7 @@ Earth Services — Full-Stack Software Engineer (Nov 2024 — Mar 2026):
 Email: surajkumar11292@gmail.com
 GitHub: surajkumar11292
 LinkedIn: linkedin.com/in/suraj-kumar-1b9a65250
-Location: Bengaluru, India
+Location: India
 Available for: Full-Stack Engineer roles, MERN stack positions, Node.js/React developer roles.
 --- END PROFILE ---`;
 
@@ -81,7 +81,7 @@ module.exports = async function handler(req, res) {
       const url = new URL(origin);
       const h = url.hostname;
       const ok = h === 'localhost' || h === '127.0.0.1' ||
-                 h === 'surajkumar11292.github.io' || h.endsWith('.surajkumar11292.github.io') ||
+                 h === 'suraj-portfolio-io.vercel.app' || h.endsWith('.suraj-portfolio-io.vercel.app') ||
                  h.endsWith('.vercel.app');
       if (!ok) {
         return res.status(403).json({ error: 'Forbidden' });

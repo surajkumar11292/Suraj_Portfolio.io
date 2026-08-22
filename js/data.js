@@ -8,9 +8,9 @@ const PORTFOLIO_DATA = {
   name: "Suraj Kumar",
   shortName: "Suraj",
   title: "Full-Stack Developer · React · Node.js",
-  tagline: "Full-Stack Software Engineer, Bengaluru",
+  tagline: "Full-Stack Software Engineer",
   bio: [
-    "I'm a Full-Stack Software Engineer based in Bengaluru with hands-on professional experience building <span class='about-highlight'>production-grade web applications</span> using the <span class='about-highlight'>MERN stack</span> — from school management portals to real-time messaging ecosystems.",
+    "I'm a Full-Stack Software Engineer with hands-on professional experience building <span class='about-highlight'>production-grade web applications</span> using the <span class='about-highlight'>MERN stack</span> — from school management portals to real-time messaging ecosystems.",
 
     "I specialize in architecting end-to-end systems: responsive React frontends, scalable Node.js backends, secure REST APIs with JWT & RBAC, and real-time features via WebSockets and WebRTC. I've shipped features used by real users at <em>Earth Services</em>, integrated AI APIs (Gemini 1.5 Flash), and built P2P file-sharing platforms with zero server storage cost.",
 
@@ -25,7 +25,7 @@ const PORTFOLIO_DATA = {
     phone: "+91 7258025793",
     github: "https://github.com/surajkumar11292",
     linkedin: "https://www.linkedin.com/in/suraj-kumar-1b9a65250/",
-    location: "Bengaluru, India",
+    location: "India",
   },
 
   /* ── STATS ─────────────────────────────────────────────────── */
@@ -54,7 +54,7 @@ const PORTFOLIO_DATA = {
       id: "earth-services-2024",
       role: "Full-Stack Software Engineer",
       company: "Earth Services",
-      location: "Bengaluru, IN",
+      location: "India",
       period: "Nov 2024 — Mar 2026",
       duration: "16 months",
       bullets: [

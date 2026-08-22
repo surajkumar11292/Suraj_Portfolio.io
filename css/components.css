@@ -493,7 +493,7 @@
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center center;
+  object-position: 50% 12%;
   border: 3px solid var(--border-strong);
   display: block;
   transition:

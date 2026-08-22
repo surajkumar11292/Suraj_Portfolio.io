@@ -45,11 +45,10 @@
     if (!el) return;
  
     const phrases = [
-      'CyberSecurity Enthusiast',
-      'Ethical Hacker',
-      'DevOps Engineer',
       'Full-Stack Developer',
-      'Mobile App Developer',
+      'System Design Enthusiast',
+      'DevOps Practitioner',
+      'MERN Stack Engineer',
     ];
  
     let phraseIndex = 0;

@@ -7,8 +7,8 @@ const UI = (() => {
 
   /* ── THEME ─────────────────────────────────────────────────── */
   const Theme = {
-    // Cycle order: light → dark → terminal → light → ...
-    THEMES: ['light', 'dark', 'terminal'],
+    // Cycle order: dark → light → terminal → dark → ...
+    THEMES: ['dark', 'light', 'terminal'],
 
     ICONS: {
       light:    '☀',
@@ -29,7 +29,7 @@ const UI = (() => {
     },
 
     init() {
-      const saved = localStorage.getItem('ak-theme') || 'light';
+      const saved = localStorage.getItem('ak-theme') || 'dark';
       this._apply(saved, false); // no toast on init
 
       const toggle = document.getElementById('theme-toggle');
@@ -40,7 +40,7 @@ const UI = (() => {
     },
 
     cycle() {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
       const idx = this.THEMES.indexOf(current);
       const next = this.THEMES[(idx + 1) % this.THEMES.length];
       this._apply(next, true);

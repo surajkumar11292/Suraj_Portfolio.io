@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/surajkumar11292/surajkumar11292.github.io.git"
+    "url": "git+https://github.com/surajkumar11292/Suraj_Portfolio.io.git"
   },
   "keywords": ["portfolio", "full-stack", "mern", "react", "nodejs"],
   "author": "Suraj Kumar <surajkumar11292@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/surajkumar11292/surajkumar11292.github.io/issues"
+    "url": "https://github.com/surajkumar11292/Suraj_Portfolio.io/issues"
   },
-  "homepage": "https://surajkumar11292.github.io",
+  "homepage": "https://suraj-portfolio-io.vercel.app",
   "dependencies": {
     "@google/genai": "^2.17.1",
     "@upstash/ratelimit": "^2.0.8",

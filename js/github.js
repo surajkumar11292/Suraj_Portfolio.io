@@ -576,7 +576,9 @@ const GitHub = (() => {
     init() {
       fetchActivity();
       fetchProfile();
-      HEATMAP.init();
+      if (document.getElementById("github-heatmap")) {
+        HEATMAP.init();
+      }
       fetchRepoStars();
     },
   };
