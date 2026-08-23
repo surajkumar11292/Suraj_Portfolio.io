@@ -44,37 +44,40 @@ const ContactForm = (() => {
     submitBtn.textContent = loading ? 'Sending…' : 'Send Message';
   }
 
-  /* ── EMAILJS SEND ──────────────────────────────────────────── */
-  async function sendViaEmailJS(data) {
-    // Load EmailJS SDK lazily
-    if (!window.emailjs) {
-      await new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-      window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-    }
-
-    await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      from_name:    data.name,
-      from_email:   data.email,
-      subject:      data.subject,
-      message:      data.message,
-      reply_to:     data.email,
-      to_name:      'Suraj',
+  /* ── DIRECT EMAIL SEND (Delivers to surajkumar11292@gmail.com) ──── */
+  async function sendDirectToEmail(data) {
+    const response = await fetch('https://formsubmit.co/ajax/surajkumar11292@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        _replyto: data.email,
+        _subject: `New Message from ${data.name} via Portfolio: ${data.subject}`,
+        subject: data.subject,
+        message: data.message,
+        _captcha: 'false',
+        _template: 'table',
+      }),
     });
+
+    const result = await response.json();
+    if (!response.ok || (result.success !== 'true' && result.success !== true && !result.message?.includes('success'))) {
+      throw new Error(result.message || 'Failed to deliver message.');
+    }
+    return result;
   }
 
-  /* ── FALLBACK: mailto ──────────────────────────────────────── */
+  /* ── FALLBACK: Direct Gmail Compose ───────────────────────── */
   function sendViaMailto(data) {
     const body = encodeURIComponent(
       `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
     );
-    const subject = encodeURIComponent(data.subject);
-    window.open(`mailto:surajkumar11292@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    const subject = encodeURIComponent(`Portfolio Message: ${data.subject}`);
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=surajkumar11292@gmail.com&su=${subject}&body=${body}`, '_blank');
   }
 
   /* ── SUBMIT HANDLER ────────────────────────────────────────── */
@@ -99,22 +102,18 @@ const ContactForm = (() => {
     setStatus('');
 
     try {
-      if (EMAILJS_ENABLED) {
-        await sendViaEmailJS(data);
-        setStatus('✓ Message sent! I\'ll get back to you soon.', 'success');
-        form.reset();
-        UI.Toast.show('Message sent successfully!', '✓');
-      } else {
-        // Dev mode — open mailto as fallback
-        sendViaMailto(data);
-        setStatus('Opening your email client…', 'success');
-        setTimeout(() => setStatus(''), 3000);
+      await sendDirectToEmail(data);
+      setStatus('✓ Message delivered directly to Suraj\'s inbox! I\'ll get back to you soon.', 'success');
+      form.reset();
+      if (typeof UI !== 'undefined' && UI.Toast) {
+        UI.Toast.show('Message delivered successfully!', '✓');
       }
     } catch (err) {
-      console.error('Form send error:', err);
-      setStatus('Something went wrong. Try emailing directly.', 'error');
-      // Fallback to mailto
+      console.warn('Direct delivery fallback triggered:', err);
+      // Fallback: open Gmail compose
       sendViaMailto(data);
+      setStatus('Opening Gmail to send your message directly…', 'success');
+      setTimeout(() => setStatus(''), 4000);
     } finally {
       setLoading(false);
     }

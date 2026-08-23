@@ -132,8 +132,8 @@ const PORTFOLIO_DATA = {
       featured: true,
       hero: true,
       tags: ["React", "Node.js", "Socket.io", "Docker", "Clerk", "ImageKit", "MongoDB"],
-      github: "https://github.com/surajkumar11292",
-      repo: "chat-app",
+      github: "https://github.com/surajkumar11292/Chat-App",
+      repo: "Chat-App",
       demo: "https://chat-app-nl36.onrender.com",
       casestudy: {
         problem:
@@ -161,7 +161,7 @@ const PORTFOLIO_DATA = {
       featured: true,
       hero: true,
       tags: ["React", "WebRTC", "WebSockets", "Express.js", "Vercel"],
-      github: "https://github.com/surajkumar11292",
+      github: "https://github.com/surajkumar11292/NoShare",
       repo: "NoShare",
       demo: "https://no-share.vercel.app",
       casestudy: {
@@ -190,8 +190,8 @@ const PORTFOLIO_DATA = {
       featured: true,
       hero: true,
       tags: ["React", "Node.js", "MongoDB", "Gemini AI", "JWT", "Twilio MFA", "RBAC"],
-      github: "https://github.com/surajkumar11292",
-      repo: "police-documentation",
+      github: "https://github.com/surajkumar11292/Police_Documentation",
+      repo: "Police_Documentation",
       demo: "https://digital-record-portal.vercel.app",
       casestudy: {
         problem:
@@ -219,8 +219,8 @@ const PORTFOLIO_DATA = {
       featured: true,
       hero: true,
       tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Bcrypt", "Vercel"],
-      github: "https://github.com/surajkumar11292/Swiss-Bank",
-      repo: "Swiss-Bank",
+      github: "https://github.com/surajkumar11292/Swiss_Bank",
+      repo: "Swiss_Bank",
       demo: "https://swiss-bank-zeta.vercel.app/",
       casestudy: {
         problem:

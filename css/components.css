@@ -523,14 +523,17 @@
   object-position: 50% 12%;
   border: 3px solid var(--border-strong);
   display: block;
+  box-shadow: 0 12px 36px rgba(0, 71, 67, 0.35);
   transition:
     transform var(--t-normal),
-    border-color var(--t-normal);
+    border-color var(--t-normal),
+    box-shadow var(--t-normal);
 }
 
 .about-photo:hover {
   transform: scale(1.04);
   border-color: var(--accent);
+  box-shadow: 0 16px 44px rgba(98, 218, 235, 0.4);
 }
 
 .about-photo-badge {
