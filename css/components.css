@@ -2886,18 +2886,14 @@
   .contact-section-inner {
     grid-template-columns: 1fr;
   }
+  .hero-bg-text {
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
   .mobile-nav-actions {
     display: none !important;
-  }
-}
-
-  /* timeline mobile styles moved to mobile.css */
-
-  .hero-bg-text {
-    display: none;
   }
 }
 .star-count {
