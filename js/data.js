@@ -208,6 +208,7 @@ const PORTFOLIO_DATA = {
         lessons:
           "AI integrations are only as good as their validation layer. Gemini's output needed strict post-processing to be useful — raw LLM responses are not production-ready without schema validation and fallback handling.",
       },
+    },
     {
       id: "swiss-bank",
       category: "Full-Stack · Fintech · Security",
