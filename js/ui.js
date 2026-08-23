@@ -109,16 +109,27 @@ const UI = (() => {
       const menuBtn = document.getElementById('menu-toggle');
       const navLinks = document.querySelector('.nav-links');
       if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
           const open = navLinks.classList.toggle('mobile-open');
           menuBtn.classList.toggle('open', open);
+          menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
-        // Close on link click
-        navLinks.querySelectorAll('a').forEach(a => {
-          a.addEventListener('click', () => {
+        // Close on link or button click inside menu
+        navLinks.querySelectorAll('a, button').forEach(el => {
+          el.addEventListener('click', () => {
             navLinks.classList.remove('mobile-open');
             menuBtn.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
           });
+        });
+        // Close when tapping anywhere outside
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            menuBtn.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          }
         });
       }
     }

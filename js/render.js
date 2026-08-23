@@ -194,22 +194,22 @@ const Renderer = (() => {
         <a class="ph-live" href="https://student-management-system-java-springboot.onrender.com" target="_blank" rel="noopener noreferrer">▶ View live app</a>
       </div>`;
 
-      const BANK_HERO = `
+      const SWISS_BANK_HERO = `
       <div class="ph-visual" aria-hidden="true">
-        <span class="ph-badge">◆ Live Ledger</span>
-        <svg class="ph-radar" viewBox="0 0 240 240" role="img" aria-label="Bank transfer animation">
-          <text class="bk-ref-text" x="120" y="30">TXN-4F2A9C1D</text>
+        <span class="ph-badge">◆ Live 256-Bit Vault</span>
+        <svg class="ph-radar" viewBox="0 0 240 240" role="img" aria-label="Swiss Bank secure transaction and vault animation">
+          <text class="bk-ref-text" x="120" y="30">SWISS-VAULT-256</text>
 
           <rect class="ph-outline" x="16" y="90" width="68" height="46" rx="10" fill="none"/>
           <rect class="bk-chip" x="24" y="100" width="15" height="11" rx="2"/>
-          <text class="bk-acct-text" x="50" y="128">•• 4821</text>
-          <text class="bk-balance" x="50" y="152">₹50,000</text>
+          <text class="bk-acct-text" x="50" y="128">•• 9482</text>
+          <text class="bk-balance" x="50" y="152">$125,000</text>
 
           <rect class="ph-outline" x="156" y="90" width="68" height="46" rx="10" fill="none"/>
           <rect class="bk-chip" x="164" y="100" width="15" height="11" rx="2"/>
-          <text class="bk-acct-text" x="190" y="128">•• 7734</text>
-          <text class="bk-balance bk-balance-old" x="190" y="152">₹12,500</text>
-          <text class="bk-balance bk-balance-new" x="190" y="152">₹12,750</text>
+          <text class="bk-acct-text" x="190" y="128">•• 3108</text>
+          <text class="bk-balance bk-balance-old" x="190" y="152">$45,000</text>
+          <text class="bk-balance bk-balance-new" x="190" y="152">+$15,000</text>
 
           <circle class="bk-lock-pulse" cx="120" cy="113" r="15"><animate attributeName="r" values="15;27" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0" dur="3.6s" repeatCount="indefinite"/></circle>
           <circle class="bk-lock-badge" cx="120" cy="113" r="15"/>
@@ -230,8 +230,9 @@ const Renderer = (() => {
             <path class="ph-check" style="animation-delay:0.35s" d="M184 166 l4 5 l9 -10"/>
           </g>
         </svg>
-        <a class="ph-live" href="https://banking-management-system-java.onrender.com" target="_blank" rel="noopener noreferrer">▶ View live app</a>
+        <a class="ph-live" href="https://swiss-bank-zeta.vercel.app/" target="_blank" rel="noopener noreferrer">▶ View live app</a>
       </div>`;
+      const BANK_HERO = SWISS_BANK_HERO;
 
 const FSOCIETY_HERO = `
       <div class="ph-visual" aria-hidden="true">
@@ -874,6 +875,8 @@ const SNAPURL_HERO = `
       chatapp: CHAT_HERO,
       noshare: NOSHARE_HERO,
       "police-documentation": POLICE_HERO,
+      "swiss-bank": SWISS_BANK_HERO,
+      bank: SWISS_BANK_HERO,
       "dread-project": DREAD_HERO,
       gitatlas: GITATLAS_HERO,
       snapurl: SNAPURL_HERO,

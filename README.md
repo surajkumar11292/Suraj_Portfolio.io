@@ -42,10 +42,11 @@ Built with a focus on performance, aesthetics, and modern developer experience. 
 
 ## 📁 Featured Projects
 
-1. **[Chat-App](https://chat-app-nl36.onrender.com)** — Real-time MERN messaging ecosystem with Socket.io, Docker containerization, Clerk Webhooks, and ImageKit media optimization.
-2. **[NoShare](https://no-share.vercel.app)** — Serverless peer-to-peer file transfer platform using WebRTC data channels — zero server storage with 60% lower latency.
-3. **[Police-Documentation](https://digital-record-portal.vercel.app)** — AI-powered police archival management portal with Gemini 1.5 document parsing, Twilio MFA, RBAC, and SHA-256 integrity verification.
-4. **[Personal Portfolio](https://suraj-portfolio-io.vercel.app/)** — High-performance developer portfolio scoring 95+ on Google Lighthouse with dark/light themes and terminal mode.
+1. **[Swiss Bank](https://swiss-bank-zeta.vercel.app/)** — Security-focused fintech digital banking web application with 256-bit AES encryption, MFA vault authentication, atomic fund transfers, and real-time ledger verification.
+2. **[Chat-App](https://chat-app-nl36.onrender.com)** — Real-time MERN messaging ecosystem with Socket.io, Docker containerization, Clerk Webhooks, and ImageKit media optimization.
+3. **[NoShare](https://no-share.vercel.app)** — Serverless peer-to-peer file transfer platform using WebRTC data channels — zero server storage with 60% lower latency.
+4. **[Police-Documentation](https://digital-record-portal.vercel.app)** — AI-powered police archival management portal with Gemini 1.5 document parsing, Twilio MFA, RBAC, and SHA-256 integrity verification.
+5. **[Personal Portfolio](https://suraj-portfolio-io.vercel.app/)** — High-performance developer portfolio scoring 95+ on Google Lighthouse with dark/light themes and terminal mode.
 
 ---
 

@@ -208,6 +208,34 @@ const PORTFOLIO_DATA = {
         lessons:
           "AI integrations are only as good as their validation layer. Gemini's output needed strict post-processing to be useful — raw LLM responses are not production-ready without schema validation and fallback handling.",
       },
+    {
+      id: "swiss-bank",
+      category: "Full-Stack · Fintech · Security",
+      title: "Swiss Bank — Secure NetBanking & Vault System",
+      desc: "A production-grade digital banking web application with multi-layered transaction security, end-to-end 256-bit AES encryption, role-based vault authorization, real-time balance calculations, and simulated fund transfers with cryptographic audit logs.",
+      metric: "256-Bit AES · MFA Vault · Real-Time Ledger",
+      period: "2025",
+      featured: true,
+      hero: true,
+      tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Bcrypt", "Vercel"],
+      github: "https://github.com/surajkumar11292/Swiss-Bank",
+      repo: "Swiss-Bank",
+      demo: "https://swiss-bank-zeta.vercel.app/",
+      casestudy: {
+        problem:
+          "Designing a high-security online banking interface that demonstrates robust financial transaction flows, role-based permissions, and fraud prevention mechanisms without introducing high client-side latency.",
+        approach:
+          "Engineered a full-stack MERN banking ecosystem with protected API endpoints, JWT-based session security, and Bcrypt password hashing. Implemented simulated atomic fund transfer logic with double-entry balance verification to prevent race conditions. Designed an interactive banking dashboard with real-time balance charts, beneficiary management, and instant transfer receipt generation.",
+        challenges: [
+          "Ensuring transaction integrity across simulated simultaneous debit and credit operations",
+          "Designing an intuitive, responsive fintech interface with strict input validation and card number formatting",
+          "Implementing tamper-evident audit logging for all account transactions and authentication attempts",
+        ],
+        outcome:
+          "A live fintech banking web application deployed at swiss-bank-zeta.vercel.app with instant fund transfers, 256-bit security visualizers, and responsive account analytics.",
+        lessons:
+          "Financial architectures require strict transactional consistency and server-side balance validation at every stage to prevent state desynchronization.",
+      },
     },
   ],
 
