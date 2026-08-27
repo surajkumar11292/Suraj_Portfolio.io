@@ -54,10 +54,25 @@ const TECH_ICONS = {
   "react native": "react",
   "react js": "react",
   "node.js": "nodedotjs",
+  "express": "express",
+  "express.js": "express",
+  "fastify": "fastify",
   "flask": "flask",
   "fastapi": "fastapi",
+  "tailwind": "tailwindcss",
+  "tailwind css": "tailwindcss",
+  "socket.io": "socketdotio",
   "material-ui": "mui",
   "junit": "junit5",
+
+  // Data & Messaging Layer
+  "kafka": "apachekafka",
+  "apache kafka": "apachekafka",
+  "prisma": "prisma",
+  "prisma orm": "prisma",
+  "elasticsearch": "elasticsearch",
+  "mongodb": "mongodb",
+  "razorpay": "razorpay",
 
   // ML / Data
   "scikit-learn": "scikitlearn",

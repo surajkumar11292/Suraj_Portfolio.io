@@ -50,7 +50,10 @@ He has a Bachelor of Computer Applications (BCA) from Aryabhatta Knowledge Unive
 He has 16 months of professional experience at Earth Services (Nov 2024 — Mar 2026) building school management portals and CRMs with the MERN stack.
 
 **Core Skills**
-React.js, Node.js, Express.js, MongoDB, JavaScript, Socket.io, WebRTC, Docker, JWT, REST APIs, Tailwind CSS, Redux Toolkit, Zustand, GitHub Actions, Vercel, Render, Gemini AI, Clerk, Twilio.
+React.js, Node.js, Express.js, Apache Kafka, Redis, PostgreSQL, Prisma ORM, Elasticsearch, MongoDB, JavaScript, Socket.io, WebRTC, Docker, JWT, REST APIs, Tailwind CSS, Redux Toolkit, Zustand, GitHub Actions, Vercel, Render, Gemini AI, Clerk, Twilio.
+
+**Currently Building**
+TrainTravel — A scalable distributed railway reservation and ticketing platform built with 8 microservices, Apache Kafka event streams, Redis distributed seat locking with TTL auto-expiry, Elasticsearch fast station search, and Saga transaction choreography. GitHub: https://github.com/surajkumar11292/TrainTravel
 
 **Professional Experience**
 Earth Services — Full-Stack Software Engineer (Nov 2024 — Mar 2026):
@@ -61,16 +64,18 @@ Earth Services — Full-Stack Software Engineer (Nov 2024 — Mar 2026):
 - Configured Razorpay webhooks for fee collection tracking
 
 **Featured Projects**
-1. Chat-App: Real-time MERN messaging app containerized with Docker. Socket.io for bidirectional messaging, Clerk Webhooks for user sync, ImageKit for media, cron jobs to prevent cold-start. Live at chat-app-nl36.onrender.com
-2. NoShare: Serverless P2P file transfer using WebRTC data channels — zero server storage, 60% lower latency. Custom Express.js signaling server with IP rate limiting. Live at no-share.vercel.app
-3. Police-Documentation: AI-powered police record management portal. Gemini 1.5 Flash API for document parsing, RBAC with admin workflows, Twilio MFA, JWT, SHA-256 document integrity verification. Live at digital-record-portal.vercel.app
+1. TrainTravel: Scalable distributed railway reservation platform with 8 microservices (API Gateway, User, Search, Admin, Notification, Booking, Payment, Inventory). Features Apache Kafka asynchronous event streaming, Redis distributed seat locking with TTL auto-expiry to prevent double-booking, Elasticsearch train search, and Saga distributed transactions. Code at github.com/surajkumar11292/TrainTravel
+2. Chat-App: Real-time MERN messaging app containerized with Docker. Socket.io for bidirectional messaging, Clerk Webhooks for user sync, ImageKit for media, cron jobs to prevent cold-start. Live at chat-app-nl36.onrender.com
+3. NoShare: Serverless P2P file transfer using WebRTC data channels — zero server storage, 60% lower latency. Custom Express.js signaling server with IP rate limiting. Live at no-share.vercel.app
+4. Police-Documentation: AI-powered police record management portal. Gemini 1.5 Flash API for document parsing, RBAC with admin workflows, Twilio MFA, JWT, SHA-256 document integrity verification. Live at digital-record-portal.vercel.app
+5. Swiss Bank: Secure NetBanking & Vault System with 256-bit AES encryption, role-based vault authorization, and simulated atomic fund transfer logic. Live at swiss-bank-zeta.vercel.app
 
 **Contact Details**
 Email: surajkumar11292@gmail.com
 GitHub: surajkumar11292
 LinkedIn: linkedin.com/in/suraj-kumar-1b9a65250
 Location: Bengaluru, India
-Available for: Full-Stack Engineer roles, MERN stack positions, Node.js/React developer roles.
+Available for: Full-Stack Engineer roles, MERN stack positions, Node.js/React/Distributed Systems developer roles.
 --- END PROFILE ---`;
 
 module.exports = async function handler(req, res) {

@@ -122,7 +122,7 @@
       </span>
       <span class="building-status-badge ${badgeClass}">${badgeLabel}</span>
     </div>
-    <p class="building-title">${b.title}</p>
+    <p class="building-title">${b.github ? `<a href="${b.github}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;">${b.title} <span style="font-size:0.75rem;opacity:0.8;">↗</span></a>` : b.title}</p>
     <p class="building-desc">${b.desc}</p>
     <div class="building-meta">
       <div class="building-stack">${tags}</div>

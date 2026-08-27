@@ -870,7 +870,126 @@ const SNAPURL_HERO = `
         <a class="ph-live" href="https://dread-project.onrender.com/" target="_blank" rel="noopener noreferrer">▶ View live app</a>
       </div>`;
 
+    const TRAIN_HERO = `
+      <div class="ph-visual" aria-hidden="true">
+        <span class="ph-badge">◆ Microservices · Kafka</span>
+        <svg class="ph-radar" viewBox="0 0 240 240" role="img" aria-label="TrainTravel distributed microservices train reservation architecture">
+          <defs>
+            <linearGradient id="ttStreamGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#31F2A0" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#62DAEB" stop-opacity="0.9"/>
+            </linearGradient>
+            <linearGradient id="ttBeamGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Outer App Window Frame -->
+          <rect class="ph-outline" x="22" y="32" width="196" height="174" rx="12" fill="none"/>
+          
+          <!-- Top Window Bar -->
+          <rect class="tt-topbar" x="23" y="33" width="194" height="22" rx="11"/>
+          <circle class="tt-dot tt-dot-r" cx="36" cy="44" r="3.2"/>
+          <circle class="tt-dot tt-dot-y" cx="46" cy="44" r="3.2"/>
+          <circle class="tt-dot tt-dot-g" cx="56" cy="44" r="3.2"/>
+          <text class="tt-topbar-text" x="135" y="48">🚆 TRAINTRAVEL · SAGA &amp; KAFKA</text>
+
+          <!-- Top Event Flow Pipeline: Gateway -> Kafka Bus -> Saga -->
+          <g transform="translate(30, 62)">
+            <!-- API Gateway Node -->
+            <rect class="tt-node-box" x="0" y="0" width="46" height="18" rx="4"/>
+            <text class="tt-node-text" x="23" y="12">GATEWAY</text>
+
+            <!-- Kafka Channel Path -->
+            <path class="tt-kafka-path" d="M 46 9 L 132 9"/>
+            <!-- Animated Kafka Event Stream Packet -->
+            <circle class="tt-stream-packet" r="3">
+              <animateMotion dur="2.4s" repeatCount="indefinite" path="M 46 9 L 132 9"/>
+            </circle>
+
+            <!-- Booking Saga Node -->
+            <rect class="tt-node-box tt-node-active" x="64" y="0" width="58" height="18" rx="4"/>
+            <text class="tt-node-text tt-node-text-active" x="93" y="12">SAGA BUS</text>
+
+            <!-- Inventory / Redis Node -->
+            <rect class="tt-node-box" x="132" y="0" width="48" height="18" rx="4"/>
+            <text class="tt-node-text" x="156" y="12">INVENTORY</text>
+          </g>
+
+          <!-- Railway Tracks & High-Speed Train -->
+          <g transform="translate(0, 92)">
+            <!-- Upper and Lower Rails -->
+            <line class="tt-rail" x1="28" y1="6" x2="212" y2="6"/>
+            <line class="tt-rail" x1="28" y1="18" x2="212" y2="18"/>
+            
+            <!-- Ties / Sleepers -->
+            <line class="tt-tie" x1="38" y1="3" x2="38" y2="21"/>
+            <line class="tt-tie" x1="56" y1="3" x2="56" y2="21"/>
+            <line class="tt-tie" x1="74" y1="3" x2="74" y2="21"/>
+            <line class="tt-tie" x1="92" y1="3" x2="92" y2="21"/>
+            <line class="tt-tie" x1="110" y1="3" x2="110" y2="21"/>
+            <line class="tt-tie" x1="128" y1="3" x2="128" y2="21"/>
+            <line class="tt-tie" x1="146" y1="3" x2="146" y2="21"/>
+            <line class="tt-tie" x1="164" y1="3" x2="164" y2="21"/>
+            <line class="tt-tie" x1="182" y1="3" x2="182" y2="21"/>
+            <line class="tt-tie" x1="200" y1="3" x2="200" y2="21"/>
+
+            <!-- Moving Bullet Train Group -->
+            <g class="tt-train-group">
+              <!-- Headlight Beam -->
+              <polygon class="tt-beam" points="46,12 82,4 82,20" fill="url(#ttBeamGrad)"/>
+              
+              <!-- Train Engine Body -->
+              <path class="tt-train-body" d="M 0 4 L 32 4 C 40 4 45 7 48 12 C 45 17 40 20 32 20 L 0 20 Z"/>
+              <rect class="tt-train-window" x="10" y="7" width="22" height="4" rx="1.5"/>
+              <circle class="tt-headlight-dot" cx="46" cy="12" r="2"/>
+            </g>
+          </g>
+
+          <!-- Seat Matrix & Redis Distributed Lock Visualizer -->
+          <g transform="translate(30, 126)">
+            <!-- Matrix Title -->
+            <text class="tt-sub-label" x="0" y="8">SEAT MATRIX</text>
+            <text class="tt-sub-label" x="110" y="8">LOCK STATUS</text>
+
+            <!-- Seat A1 (Available) -->
+            <rect class="tt-seat tt-seat-avail" x="0" y="14" width="22" height="18" rx="3"/>
+            <text class="tt-seat-num" x="11" y="26">A1</text>
+
+            <!-- Seat A2 (Booked) -->
+            <rect class="tt-seat tt-seat-booked" x="26" y="14" width="22" height="18" rx="3"/>
+            <text class="tt-seat-num" x="37" y="26">A2</text>
+
+            <!-- Seat A3 (Available) -->
+            <rect class="tt-seat tt-seat-avail" x="52" y="14" width="22" height="18" rx="3"/>
+            <text class="tt-seat-num" x="63" y="26">A3</text>
+
+            <!-- Seat A4 (Active Distributed Locking Target with Pulse) -->
+            <g class="tt-seat-locking-wrap">
+              <circle class="tt-lock-pulse-ring" cx="89" cy="23" r="10"/>
+              <rect class="tt-seat tt-seat-locked" x="78" y="14" width="22" height="18" rx="3"/>
+              <text class="tt-seat-num tt-seat-num-locked" x="89" y="26">A4</text>
+            </g>
+
+            <!-- Lock Info Display Box -->
+            <rect class="tt-lock-box" x="108" y="14" width="72" height="18" rx="3"/>
+            <text class="tt-lock-text" x="114" y="26">🔒 TTL 10m: OK</text>
+          </g>
+
+          <!-- Bottom HUD Readout -->
+          <g transform="translate(30, 170)">
+            <rect class="tt-hud-box" x="0" y="0" width="180" height="24" rx="5"/>
+            <circle class="tt-hud-dot" cx="12" cy="12" r="3.5"/>
+            <text class="tt-hud-status" x="22" y="15">Saga 200 OK · 0ms Double-Book Race</text>
+            <path class="ph-check tt-check-icon" d="M 160 12 l 4 4 l 8 -8"/>
+          </g>
+        </svg>
+        <a class="ph-live" href="https://github.com/surajkumar11292/TrainTravel" target="_blank" rel="noopener noreferrer">▶ View on GitHub</a>
+      </div>`;
+
     const HERO_VISUALS = {
+      traintravel: TRAIN_HERO,
       "portfolio-site": PF_HERO,
       chatapp: CHAT_HERO,
       noshare: NOSHARE_HERO,
@@ -941,6 +1060,7 @@ const SNAPURL_HERO = `
         return (
           cat.includes("devops") ||
           cat.includes("tooling") ||
+          cat.includes("distributed") ||
           tags.some((t) =>
             [
               "docker",
@@ -952,9 +1072,14 @@ const SNAPURL_HERO = `
               "vercel",
               "github actions",
               "aws",
+              "kafka",
+              "redis",
+              "elasticsearch",
+              "prisma",
             ].includes(t)
           ) ||
-          p.id === "gitatlas"
+          p.id === "gitatlas" ||
+          p.id === "traintravel"
         );
       }
 
@@ -963,6 +1088,7 @@ const SNAPURL_HERO = `
           cat.includes("full-stack") ||
           cat.includes("web") ||
           cat.includes("frontend") ||
+          cat.includes("microservices") ||
           tags.some((t) =>
             [
               "spring boot",
@@ -976,8 +1102,11 @@ const SNAPURL_HERO = `
               "mysql",
               "postgresql",
               "rest api",
+              "kafka",
+              "redis",
             ].includes(t)
           ) ||
+          p.id === "traintravel" ||
           p.id === "cineroulette" ||
           p.id === "lifeos" ||
           p.id === "bank" ||

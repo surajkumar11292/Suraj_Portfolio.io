@@ -873,3 +873,183 @@
   .ga-packet      { animation: none !important; }
   .ga-head-pulse  { animation: none !important; opacity: 0 !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TRAINTRAVEL — Distributed Microservices & Railway Reservation Architecture
+   Namespaced `tt-`. Shares ph-visual/ph-badge/ph-live/ph-outline.
+════════════════════════════════════════════════════════════════ */
+
+.tt-topbar { fill: var(--bg-card-raised); opacity: .9; }
+
+.tt-dot { opacity: .8; }
+.tt-dot-r { fill: #ff5f56; }
+.tt-dot-y { fill: #ffbd2e; }
+.tt-dot-g { fill: #27c93f; }
+
+.tt-topbar-text {
+  font-family: var(--font-mono); font-size: 8px; letter-spacing: .03em;
+  fill: var(--accent); opacity: .85; text-anchor: middle; font-weight: 600;
+}
+
+/* Event Flow Pipeline */
+.tt-node-box {
+  fill: var(--bg-card);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.tt-node-active {
+  stroke: var(--accent);
+  stroke-opacity: .7;
+  fill: var(--accent-light);
+}
+.tt-node-text {
+  font-family: var(--font-mono); font-size: 6.5px;
+  fill: var(--text-secondary); text-anchor: middle; font-weight: 500;
+}
+.tt-node-text-active {
+  fill: var(--accent); font-weight: 700;
+}
+.tt-kafka-path {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 3;
+}
+.tt-stream-packet {
+  fill: #31F2A0;
+  filter: drop-shadow(0 0 4px #31F2A0);
+}
+
+/* Rails & Sleepers */
+.tt-rail {
+  stroke: var(--border);
+  stroke-width: 1.6;
+  opacity: .8;
+}
+.tt-tie {
+  stroke: var(--border-faint);
+  stroke-width: 1.4;
+  opacity: .6;
+}
+
+/* Moving Train Group */
+.tt-train-group {
+  animation: tt-train-move 4.8s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+.tt-train-body {
+  fill: var(--bg-card-raised);
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  filter: drop-shadow(0 0 4px var(--accent-light));
+}
+.tt-train-window {
+  fill: var(--accent);
+  opacity: .8;
+}
+.tt-headlight-dot {
+  fill: #fff;
+  filter: drop-shadow(0 0 3px #fff);
+}
+.tt-beam {
+  animation: tt-headlight-flicker 2.4s ease-in-out infinite;
+}
+
+@keyframes tt-train-move {
+  0% {
+    transform: translateX(10px);
+  }
+  42%, 58% {
+    transform: translateX(148px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes tt-headlight-flicker {
+  0%, 100% { opacity: .7; }
+  50%      { opacity: 1; filter: drop-shadow(0 0 4px var(--accent)); }
+}
+
+/* Seat Matrix */
+.tt-sub-label {
+  font-family: var(--font-mono); font-size: 6.8px; letter-spacing: .05em;
+  fill: var(--text-faint); font-weight: 600;
+}
+.tt-seat {
+  stroke-width: 1;
+}
+.tt-seat-avail {
+  fill: var(--bg-card);
+  stroke: #31F2A0;
+  stroke-opacity: .7;
+}
+.tt-seat-booked {
+  fill: var(--bg-surface);
+  stroke: var(--border-faint);
+  opacity: .5;
+}
+.tt-seat-locked {
+  fill: rgba(234, 179, 8, 0.15);
+  stroke: #eab308;
+  stroke-width: 1.2;
+}
+.tt-seat-num {
+  font-family: var(--font-mono); font-size: 7.5px;
+  fill: var(--text-secondary); text-anchor: middle; font-weight: 600;
+}
+.tt-seat-num-locked {
+  fill: #eab308; font-weight: 700;
+}
+.tt-lock-pulse-ring {
+  fill: none;
+  stroke: #eab308;
+  stroke-width: 1.2;
+  animation: tt-lock-pulse 2.2s ease-out infinite;
+}
+@keyframes tt-lock-pulse {
+  0%   { r: 8; opacity: 0.8; }
+  100% { r: 18; opacity: 0; }
+}
+
+.tt-lock-box {
+  fill: var(--bg-card);
+  stroke: #eab308;
+  stroke-opacity: .5;
+  stroke-width: 1;
+}
+.tt-lock-text {
+  font-family: var(--font-mono); font-size: 7.5px;
+  fill: #eab308; font-weight: 600;
+}
+
+/* Bottom HUD box */
+.tt-hud-box {
+  fill: var(--bg-card);
+  stroke: var(--accent);
+  stroke-opacity: .35;
+  stroke-width: 1;
+}
+.tt-hud-dot {
+  fill: #31F2A0;
+  animation: tt-dot-pulse 1.8s ease-in-out infinite;
+}
+@keyframes tt-dot-pulse {
+  0%, 100% { opacity: .4; transform: scale(0.9); }
+  50%      { opacity: 1; transform: scale(1.1); }
+}
+.tt-hud-status {
+  font-family: var(--font-mono); font-size: 7.5px; letter-spacing: .02em;
+  fill: var(--accent); font-weight: 600;
+}
+.tt-check-icon {
+  animation: ph-draw 3.4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tt-train-group       { animation: none !important; transform: translateX(80px); }
+  .tt-beam              { animation: none !important; opacity: 0.8 !important; }
+  .tt-lock-pulse-ring   { animation: none !important; opacity: 0 !important; }
+  .tt-hud-dot           { animation: none !important; opacity: 1 !important; }
+  .tt-stream-packet     { animation: none !important; }
+}

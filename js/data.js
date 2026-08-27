@@ -31,8 +31,8 @@ const PORTFOLIO_DATA = {
   /* ── STATS ─────────────────────────────────────────────────── */
   stats: [
     { num: "1+", label: "Year Experience" },
-    { num: "3+", label: "Projects Shipped" },
-    { num: "10+", label: "Tech Stack" },
+    { num: "5+", label: "Projects Shipped" },
+    { num: "12+", label: "Tech Stack" },
     { num: "100%", label: "Production Deploys" },
   ],
 
@@ -79,9 +79,10 @@ const PORTFOLIO_DATA = {
 
   /* ── CURRENTLY BUILDING ────────────────────────────────────── */
   currentlyBuilding: {
-    title: "Portfolio — Professional Showcase",
-    desc: "Building a clean, high-performance personal portfolio to showcase my engineering projects and professional experience. Focused on fast load times, great SEO, and a premium user experience.",
-    stack: ["HTML5", "CSS3", "JavaScript", "Vercel"],
+    title: "TrainTravel — Distributed Railway Reservation System",
+    github: "https://github.com/surajkumar11292/TrainTravel",
+    desc: "Building a scalable microservices railway booking platform with Kafka event streams, Redis distributed seat locks with TTL auto-expiry, Elasticsearch fast station search, and Saga transaction choreography across 8 services.",
+    stack: ["React", "Node.js", "Kafka", "Redis", "PostgreSQL", "Prisma", "Elasticsearch", "Docker"],
     startedMonth: "Aug 2026",
     status: "in-progress",
     nextUp: {
@@ -93,6 +94,35 @@ const PORTFOLIO_DATA = {
 
   /* ── PROJECTS ──────────────────────────────────────────────── */
   projects: [
+    {
+      id: "traintravel",
+      category: "Full-Stack · Microservices · Distributed Systems",
+      title: "TrainTravel — Scalable Train Reservation Platform",
+      desc: "A production-grade microservices railway ticketing platform featuring 8 decoupled services, Apache Kafka asynchronous event streaming, Redis distributed seat locking with TTL auto-expiry, Elasticsearch low-latency route discovery, and Saga transaction choreography.",
+      metric: "8 Microservices · Kafka Streams · Redis Distributed Locking",
+      period: "2026",
+      featured: true,
+      hero: true,
+      tags: ["React", "Node.js", "Kafka", "Redis", "PostgreSQL", "Prisma", "Elasticsearch", "Docker"],
+      github: "https://github.com/surajkumar11292/TrainTravel",
+      repo: "TrainTravel",
+      demo: "",
+      casestudy: {
+        problem:
+          "High-concurrency railway ticketing systems face severe data race conditions (seat double-booking), distributed transaction failures during multi-step checkout (inventory, billing, booking), and database I/O bottlenecks during peak station and schedule search spikes.",
+        approach:
+          "Architected an 8-service distributed backend (API Gateway, User, Search, Admin, Notification, Booking, Payment, Inventory) adhering to Database-per-Service data isolation. Built Redis distributed seat locking with exponential backoff and PostgreSQL advisory locks for leader election to guarantee strict seat exclusivity during high concurrency windows. Integrated Apache Kafka event streams for asynchronous booking saga choreography (orchestrating booking creation, seat locks, Razorpay webhooks, and automatic rollbacks) and email delivery. Deployed Elasticsearch 8 with real-time Kafka index synchronization for sub-millisecond train search.",
+        challenges: [
+          "Preventing race conditions and double-booking during flash-crowd seat reservation — solved using Redis distributed locks with TTL auto-expiry and atomic rollback mechanisms",
+          "Coordinating multi-service transactions across Booking, Payment, and Inventory — orchestrated with event-driven Kafka Saga choreography with automated compensating actions",
+          "Handling high-volume station and schedule searches without overloading PostgreSQL — deployed Elasticsearch cluster with real-time Kafka index synchronization",
+        ],
+        outcome:
+          "A fault-tolerant, horizontally scalable microservices ticketing architecture capable of handling concurrent seat reservations with zero double-booking, resilient async payments with Razorpay, and instant train route discovery.",
+        lessons:
+          "Designing for distributed systems requires embracing eventual consistency where appropriate, while keeping mission-critical paths (like seat inventory) strictly isolated with distributed locks and idempotent consumer patterns.",
+      },
+    },
     {
       id: "portfolio-site",
       category: "Frontend · Performance",
@@ -367,6 +397,11 @@ const PORTFOLIO_DATA = {
   marqueeItems: [
     "React.js",
     "Node.js",
+    "Kafka",
+    "Redis",
+    "PostgreSQL",
+    "Elasticsearch",
+    "Prisma",
     "MongoDB",
     "Express.js",
     "Socket.io",
