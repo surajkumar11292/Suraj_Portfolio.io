@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -44,15 +44,21 @@
   height: 7px;
   border-radius: var(--r-full);
   background: var(--accent);
+  animation: building-blink 2s ease-in-out infinite;
   flex-shrink: 0;
 }
 
+@keyframes building-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
 .building-status-badge {
-  font-size: 0.76rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
+  padding: 0.18rem 0.55rem;
   border-radius: var(--r-full);
   background: var(--accent-light);
   color: var(--accent);
@@ -74,22 +80,21 @@
 }
 
 .building-title {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--accent);
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.25rem;
   line-height: 1.4;
   font-family: var(--font-body);
   transition: color var(--t-slow);
 }
 
 .building-desc {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
   line-height: 1.65;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-body);
-  max-width: 65ch;
   transition: color var(--t-slow);
 }
 
@@ -110,10 +115,10 @@
 .building-tag {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.76rem;
+  gap: 4px;
+  font-size: 0.68rem;
   font-weight: 500;
-  padding: 0.2rem 0.55rem;
+  padding: 0.15rem 0.5rem;
   border-radius: var(--r-full);
   border: 1px solid var(--border);
   color: var(--text-secondary);
@@ -122,26 +127,26 @@
   transition: background var(--t-slow), color var(--t-slow), border-color var(--t-slow);
 }
 .building-tag .tech-icon {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
 }
 
 .building-since {
-  font-size: 0.76rem;
-  color: var(--text-muted);
+  font-size: 0.68rem;
+  color: var(--text-faint);
   white-space: nowrap;
   font-family: var(--font-mono);
   transition: color var(--t-slow);
 }
 
-/* Terminal theme */
+/* Terminal theme — glow effect */
 [data-theme="terminal"] .building-card {
-  border-color: rgba(0, 255, 65, 0.2);
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.06);
 }
 [data-theme="terminal"] .building-card::before {
   background: linear-gradient(90deg, var(--accent), transparent);
   opacity: 0.6;
 }
 [data-theme="terminal"] .building-dot {
-  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
 }

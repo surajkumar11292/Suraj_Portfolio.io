@@ -59,7 +59,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap">
 
   <!-- Stylesheets — order matters -->
   <link rel="stylesheet" href="css/variables.css">
@@ -143,12 +143,12 @@
     .akl-kicker {
       position: relative;
       z-index: 1;
-      font-size: .8rem;
-      letter-spacing: .35em;
+      font-size: .7rem;
+      letter-spacing: .42em;
       text-transform: uppercase;
       color: var(--l-accent);
       opacity: .85;
-      padding-left: .35em;
+      padding-left: .42em;
     }
 
     .akl-name {
@@ -198,17 +198,19 @@
     @keyframes akl-lock {
       0% {
         color: var(--l-accent);
+        text-shadow: 0 0 12px var(--l-accent);
         transform: translateY(-3px) scale(1.12);
       }
 
       100% {
         color: var(--l-ink);
+        text-shadow: none;
         transform: none;
       }
     }
 
     .akl-wordmark {
-      font-family: 'Newsreader', Georgia, serif;
+      font-family: 'Fraunces', Georgia, serif;
       font-weight: 500;
       font-size: clamp(1.9rem, 8vw, 3.6rem);
       letter-spacing: -.015em;
@@ -244,7 +246,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: .82rem;
+      font-size: .76rem;
       letter-spacing: .02em;
       color: var(--l-ink);
     }
@@ -289,40 +291,38 @@
     .akl-bar>i {
       display: block;
       height: 100%;
-      width: 100%;
-      transform: scaleX(0);
-      transform-origin: left;
+      width: 0;
       border-radius: 99px;
       background: linear-gradient(90deg, var(--l-accent2), var(--l-accent));
-      transition: transform .14s linear;
+      transition: width .14s linear;
     }
 
     .akl-hex {
       position: relative;
       z-index: 1;
-      font-size: .78rem;
-      letter-spacing: .12em;
+      font-size: .62rem;
+      letter-spacing: .18em;
       color: var(--l-ink);
-      opacity: .45;
+      opacity: .32;
       font-variant-numeric: tabular-nums;
     }
 
     .akl-skip {
       position: absolute;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 1;
+      bottom: clamp(1rem, 3vh, 1.75rem);
+      right: clamp(1rem, 3vw, 1.75rem);
+      z-index: 10;
       display: inline-flex;
       align-items: center;
       gap: .45rem;
-      padding: .4rem .75rem;
+      padding: .35rem .7rem;
       font-family: 'DM Mono', 'Fira Code', monospace;
-      font-size: .8rem;
+      font-size: .7rem;
       font-weight: 500;
       letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--l-ink);
-      opacity: .75;
+      opacity: .65;
       background: var(--l-faint);
       border: 1px solid var(--l-track);
       border-radius: 6px;
@@ -348,8 +348,8 @@
 
     .akl-skip kbd {
       display: inline-block;
-      padding: .15em .45em;
-      font-size: .75rem;
+      padding: .12em .42em;
+      font-size: .64rem;
       font-family: inherit;
       font-weight: 600;
       color: var(--l-accent);
@@ -393,8 +393,8 @@
       .akl-skip {
         bottom: 1rem;
         right: 1rem;
-        padding: .35rem .65rem;
-        font-size: .75rem;
+        padding: .3rem .55rem;
+        font-size: .65rem;
       }
     }
 
@@ -591,7 +591,7 @@
       function setProgress() {
         var pct = Math.round(resolved / total * 100);
         if (pctEl) pctEl.textContent = (pct < 10 ? '0' : '') + pct + '%';
-        if (fillEl) fillEl.style.transform = 'scaleX(' + (pct / 100) + ')';
+        if (fillEl) fillEl.style.width = pct + '%';
       }
 
       function cleanUpTimers() {
@@ -830,6 +830,7 @@
   ══════════════════════════════════════════════ -->
   <section id="about" class="section">
     <div class="container">
+      <p class="section__eyebrow">About</p>
       <h2 class="section__title">Building at the<br>intersection of <em>code &amp; real-time systems</em></h2>
 
       <div class="about-grid">
@@ -891,6 +892,7 @@
   ══════════════════════════════════════════════ -->
   <section id="experience" class="section">
     <div class="container">
+      <p class="section__eyebrow">Experience</p>
       <h2 class="section__title">Where I've <em>worked</em></h2>
 
       <!-- Timeline — filled by render.js -->
@@ -905,6 +907,7 @@
   ══════════════════════════════════════════════ -->
   <section id="projects" class="section">
     <div class="container">
+      <p class="section__eyebrow">Projects</p>
       <h2 class="section__title">Things I've <em>built</em></h2>
       <p class="section__subtitle">
         Click <strong>Case Study</strong> to read the full write-up, or hit <strong>Live Demo</strong> to see the
@@ -990,6 +993,7 @@
   ══════════════════════════════════════════════ -->
   <section id="skills" class="section">
     <div class="container">
+      <p class="section__eyebrow">Skills</p>
       <h2 class="section__title">Technical <em>toolkit</em></h2>
 
       <!-- Grid — filled by render.js -->
@@ -1004,6 +1008,7 @@
   ══════════════════════════════════════════════ -->
   <section id="education" class="section">
     <div class="container">
+      <p class="section__eyebrow">Education</p>
       <h2 class="section__title">Academic <em>background</em></h2>
 
       <!-- Grid — filled by render.js -->
@@ -1018,6 +1023,7 @@
   ══════════════════════════════════════════════ -->
   <section id="certifications" class="section">
     <div class="container">
+      <p class="section__eyebrow">Certifications</p>
       <h2 class="section__title">Credentials &amp; <em>achievements</em></h2>
       <!-- Grid — filled by render.js -->
       <div class="cert-grid stagger-children" id="cert-grid"></div>
@@ -1031,6 +1037,7 @@
   ══════════════════════════════════════════════ -->
   <section id="contact" class="section">
     <div class="container">
+      <p class="section__eyebrow">Contact</p>
       <h2 class="section__title">Let's <em>work together</em></h2>
 
       <div id="visitor-counter-wrap"></div>
@@ -1157,7 +1164,7 @@
     <div class="ts-chat-panel" id="ts-chat-panel" aria-hidden="true">
       <div class="ts-chat-header">
         <div style="display: flex; align-items: center;">
-          <div id="ts-avatar-target" style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-right: 14px;"></div>
+          <div id="ts-avatar-target" style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface); box-shadow: 0 0 15px rgba(98, 218, 235, 0.2); margin-right: 14px;"></div>
           <div class="ts-header-text">
             <h3>Ask about Suraj</h3>
             <p>Answers only cover Suraj's work</p>

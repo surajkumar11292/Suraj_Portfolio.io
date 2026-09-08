@@ -7,13 +7,13 @@
 
 /* ── LIGHT MODE TOKENS ────────────────────────────────────────── */
 :root {
-  /* Backgrounds — crisp modern palette with pristine cards */
-  --bg-root:         #F8F9FA;
-  --bg-surface:      #F1F3F5;
-  --bg-card:         #FFFFFF;
+  /* Backgrounds */
+  --bg-root:         #F0EDE4;
+  --bg-surface:      #E8E4D9;
+  --bg-card:         #FAFAF7;
   --bg-card-raised:  #FFFFFF;
-  --bg-overlay:      rgba(17, 24, 39, 0.6);
-  --nav-bg:          rgba(248, 249, 250, 0.94);
+  --bg-overlay:      rgba(26, 26, 24, 0.6);
+  --nav-bg:          rgba(240, 237, 228, 0.9);
 
   /* Accent (primary brand) */
   --accent:          #004743;
@@ -26,11 +26,11 @@
   --accent2:         #B8860B;
   --accent2-light:   rgba(184, 134, 11, 0.1);
 
-  /* Text — strictly WCAG AA compliant >= 4.5:1 contrast */
-  --text-primary:    #111827;
-  --text-secondary:  #374151;
-  --text-muted:      #4B5563;
-  --text-faint:      #6B7280;
+  /* Text */
+  --text-primary:    #1A1A18;
+  --text-secondary:  #4A4A44;
+  --text-muted:      #8A8A82;
+  --text-faint:      #B0AFA8;
 
   /* Borders */
   --border-faint:    rgba(0, 71, 67, 0.08);
@@ -38,22 +38,22 @@
   --border-strong:   rgba(0, 71, 67, 0.28);
 
   /* Semantic */
-  --success:         #16a34a;
-  --warning:         #d97706;
-  --danger:          #dc2626;
-  --info:            #2563eb;
+  --success:         #22c55e;
+  --warning:         #f59e0b;
+  --danger:          #ef4444;
+  --info:            #3b82f6;
 
   /* Progress bar */
   --progress:        #004743;
 
-  /* Shadows — natural layered elevation */
-  --shadow-sm:       0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md:       0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg:       0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-  --shadow-glow:     0 0 0 2px rgba(0, 71, 67, 0.2);
+  /* Shadows */
+  --shadow-sm:       0 1px 3px rgba(0,71,67,0.07), 0 1px 2px rgba(0,71,67,0.04);
+  --shadow-md:       0 4px 16px rgba(0,71,67,0.09), 0 2px 6px rgba(0,71,67,0.05);
+  --shadow-lg:       0 12px 40px rgba(0,71,67,0.13), 0 4px 12px rgba(0,71,67,0.07);
+  --shadow-glow:     0 0 0 3px rgba(0, 71, 67, 0.2);
 
   /* Typography scale */
-  --font-display:    'Newsreader', 'Fraunces', Georgia, serif;
+  --font-display:    'Fraunces', Georgia, serif;
   --font-body:       'DM Sans', system-ui, sans-serif;
   --font-mono:       'DM Mono', 'Fira Code', monospace;
 
@@ -74,9 +74,9 @@
   --r-full: 9999px;
 
   /* Transitions */
-  --t-fast:   0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  --t-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --t-slow:   0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:   0.15s ease;
+  --t-normal: 0.25s ease;
+  --t-slow:   0.4s ease;
 
   /* Z-index layers */
   --z-below:   -1;
@@ -89,12 +89,12 @@
 
 /* ── DARK MODE TOKENS ─────────────────────────────────────────── */
 [data-theme="dark"] {
-  --bg-root:         #0A1D1D;
-  --bg-surface:      #081717;
-  --bg-card:         #112929;
-  --bg-card-raised:  #173535;
+  --bg-root:         #0F2F2F;
+  --bg-surface:      #0A2424;
+  --bg-card:         #152E2E;
+  --bg-card-raised:  #1C3A3A;
   --bg-overlay:      rgba(0, 0, 0, 0.78);
-  --nav-bg:          rgba(10, 29, 29, 0.94);
+  --nav-bg:          rgba(15, 47, 47, 0.92);
 
   --accent:          #E6C79C;
   --accent-hover:    #F0D4B0;
@@ -105,21 +105,21 @@
   --accent2:         #7FC8C4;
   --accent2-light:   rgba(127, 200, 196, 0.1);
 
-  --text-primary:    #F9FAFB;
-  --text-secondary:  #E5E7EB;
-  --text-muted:      #9CA3AF;
-  --text-faint:      #94A3B8;
+  --text-primary:    #F5F0E8;
+  --text-secondary:  #B8B0A0;
+  --text-muted:      #6E6A60;
+  --text-faint:      #4A4844;
 
-  --border-faint:    rgba(230, 199, 156, 0.08);
-  --border:          rgba(230, 199, 156, 0.16);
-  --border-strong:   rgba(230, 199, 156, 0.3);
+  --border-faint:    rgba(230, 199, 156, 0.06);
+  --border:          rgba(230, 199, 156, 0.13);
+  --border-strong:   rgba(230, 199, 156, 0.26);
 
   --progress:        #E6C79C;
 
   --shadow-sm:       0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
   --shadow-md:       0 4px 16px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.2);
   --shadow-lg:       0 12px 40px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
-  --shadow-glow:     0 0 0 2px rgba(230, 199, 156, 0.25);
+  --shadow-glow:     0 0 0 3px rgba(230, 199, 156, 0.25);
 }
 
 /* ── TERMINAL / HACKER MODE TOKENS ───────────────────────────── */
@@ -230,32 +230,33 @@
   -webkit-text-stroke: 1px rgba(0, 255, 65, 0.12);
 }
  
-/* Terminal — nav logo */
+/* Terminal — nav logo glows */
 [data-theme="terminal"] .nav-logo {
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.5);
   letter-spacing: 0.1em;
 }
  
-/* Terminal — buttons */
+/* Terminal — accent glow on buttons */
 [data-theme="terminal"] .btn--primary {
-  border: 1px solid var(--accent);
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.25);
 }
 [data-theme="terminal"] .btn--primary:hover {
-  background: var(--accent);
-  color: #0A0A0A;
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.45);
 }
  
-/* Terminal — card border on hover */
+/* Terminal — card border glow on hover */
 [data-theme="terminal"] .project-card:hover,
 [data-theme="terminal"] .skill-group:hover,
 [data-theme="terminal"] .cert-card:hover,
 [data-theme="terminal"] .blog-card:hover {
-  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.12);
 }
  
 /* Terminal — theme toggle shows "> _" */
 [data-theme="terminal"] #theme-toggle::after {
   transform: translateX(20px);
   background: #00FF41;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.8);
 }
 
 /* ── GLOBAL RESET ─────────────────────────────────────────────── */
