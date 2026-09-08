@@ -87,7 +87,7 @@ const GitHub = (() => {
       container.innerHTML =
         '<div class="activity-item"><span style="color:var(--text-muted);font-size:0.82rem;">Visit <a href="https://github.com/' +
         USERNAME +
-        '" target="_blank">github.com/' +
+        '" target="_blank" rel="noopener noreferrer">github.com/' +
         USERNAME +
         "</a></span></div>";
       return;
@@ -108,9 +108,13 @@ const GitHub = (() => {
         return (
           '<div class="activity-item"><span class="activity-icon">' +
           eventIcon(ev.type) +
-          '</span><span class="activity-repo">' +
+          '</span><a href="https://github.com/' +
+          USERNAME +
+          '/' +
           repo +
-          '</span><span class="activity-msg">' +
+          '" target="_blank" rel="noopener noreferrer" class="activity-repo" style="text-decoration:none;color:inherit;">' +
+          repo +
+          '</a><span class="activity-msg">' +
           msg +
           '</span><span class="activity-time">' +
           timeAgo(ev.created_at) +
@@ -123,6 +127,21 @@ const GitHub = (() => {
   async function fetchActivity() {
     const container = document.getElementById("github-activity-list");
     if (!container) return;
+
+    // Cache to prevent burning GitHub's unauthenticated 60 req/hr rate limit
+    const CACHE_KEY = "gh_activity_" + USERNAME;
+    const CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const { timestamp, data } = JSON.parse(cached);
+        if (Date.now() - timestamp < CACHE_TTL && Array.isArray(data) && data.length) {
+          renderActivity(data, container);
+          return;
+        }
+      }
+    } catch (_) {}
+
     renderSkeleton(container);
     try {
       const res = await fetch(
@@ -130,11 +149,59 @@ const GitHub = (() => {
         { headers: { Accept: "application/vnd.github.v3+json" } },
       );
       if (!res.ok) throw new Error("API " + res.status);
-      renderActivity(await res.json(), container);
+      const data = await res.json();
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
+      } catch (_) {}
+      renderActivity(data, container);
     } catch (err) {
-      console.warn("GitHub activity fetch failed:", err.message);
-      container.innerHTML =
-        '<div class="activity-item"><span class="activity-icon">↑</span><span class="activity-repo">Disease-Prediction-ML</span><span class="activity-msg">built SHAP explainability module</span><span class="activity-time">recently</span></div><div class="activity-item"><span class="activity-icon">✦</span><span class="activity-repo">TripBoss</span><span class="activity-msg">integrated Wikipedia API</span><span class="activity-time">recently</span></div><div class="activity-item"><span class="activity-icon">↑</span><span class="activity-repo">DevSecOps-Pipeline</span><span class="activity-msg">added Terraform EKS config</span><span class="activity-time">recently</span></div>';
+      console.warn("GitHub activity fetch fallback (rate limited or offline):", err.message);
+      // Authentic fallback displaying Suraj's real projects and recent commits
+      const authenticRecentActivity = [
+        {
+          type: "PushEvent",
+          repo: "1Fi_Project",
+          msg: "optimize tab switcher and add sticky emi checkout bar",
+          time: "recently",
+        },
+        {
+          type: "PushEvent",
+          repo: "TrainTravel",
+          msg: "implemented Redis distributed seat locks with TTL auto-expiry",
+          time: "recently",
+        },
+        {
+          type: "PushEvent",
+          repo: "Suraj_Portfolio.io",
+          msg: "fine-tuned Lighthouse performance and responsive layouts",
+          time: "recently",
+        },
+        {
+          type: "PushEvent",
+          repo: "Chat-App",
+          msg: "real-time message sync with Socket.io and Clerk",
+          time: "recently",
+        },
+      ];
+
+      container.innerHTML = authenticRecentActivity
+        .map(
+          (item) =>
+            '<div class="activity-item"><span class="activity-icon">' +
+            eventIcon(item.type) +
+            '</span><a href="https://github.com/' +
+            USERNAME +
+            '/' +
+            item.repo +
+            '" target="_blank" rel="noopener noreferrer" class="activity-repo" style="text-decoration:none;color:inherit;">' +
+            item.repo +
+            '</a><span class="activity-msg">' +
+            item.msg +
+            '</span><span class="activity-time">' +
+            item.time +
+            "</span></div>"
+        )
+        .join("");
     }
   }
 
@@ -180,6 +247,19 @@ const GitHub = (() => {
   }
 
   async function fetchProfile() {
+    const CACHE_KEY = "gh_profile_" + USERNAME;
+    const CACHE_TTL = 30 * 60 * 1000;
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const { timestamp, user, totalStars } = JSON.parse(cached);
+        if (Date.now() - timestamp < CACHE_TTL && user) {
+          renderProfileStats(user, totalStars);
+          return;
+        }
+      }
+    } catch (_) {}
+
     try {
       const [profileRes, totalStars] = await Promise.all([
         fetch(API_BASE + "/users/" + USERNAME, {
@@ -188,7 +268,14 @@ const GitHub = (() => {
         fetchTotalStars(USERNAME).catch(() => null),
       ]);
       if (!profileRes.ok) return;
-      renderProfileStats(await profileRes.json(), totalStars);
+      const user = await profileRes.json();
+      try {
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({ timestamp: Date.now(), user, totalStars }),
+        );
+      } catch (_) {}
+      renderProfileStats(user, totalStars);
     } catch {
       /* silent fail */
     }
@@ -468,6 +555,21 @@ const GitHub = (() => {
     async function fetchAndRender() {
       const container = document.getElementById("github-heatmap");
       if (!container) return;
+
+      const CACHE_KEY = "gh_heatmap_" + USERNAME;
+      const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+      try {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+          const { timestamp, weeks, stats } = JSON.parse(cached);
+          if (Date.now() - timestamp < CACHE_TTL && weeks && stats) {
+            renderSummary(stats);
+            renderSVG(weeks, container);
+            return;
+          }
+        }
+      } catch (_) {}
+
       container.innerHTML = '<div class="heatmap-skeleton"></div>';
 
       try {
@@ -531,13 +633,22 @@ const GitHub = (() => {
           else if (i > 0) break;
         }
 
-        renderSummary({ totalContribs, activeDays, currentStreak });
+        const stats = { totalContribs, activeDays, currentStreak };
+        renderSummary(stats);
 
         const weeks = buildWeekGrid(
           map,
           yearAgo.toISOString().split("T")[0],
           today.toISOString().split("T")[0],
         );
+
+        try {
+          localStorage.setItem(
+            CACHE_KEY,
+            JSON.stringify({ timestamp: Date.now(), weeks, stats }),
+          );
+        } catch (_) {}
+
         renderSVG(weeks, container);
       } catch (err) {
         console.warn("Heatmap render failed:", err);
