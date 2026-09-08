@@ -5,14 +5,14 @@
 
 /* ── CURSOR TRAIL (desktop only) ──────────────────────────────── */
 .cursor-dot {
-  width: 5px; height: 5px;
+  width: 6px; height: 6px;
   background: var(--accent);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: calc(var(--z-toast) + 10);
-  transform: translate(-50%, -50%);
-  transition: width 0.15s, height 0.15s, background 0.2s;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
 }
 .cursor-ring {
   width: 32px; height: 32px;
@@ -21,17 +21,17 @@
   position: fixed;
   pointer-events: none;
   z-index: calc(var(--z-toast) + 9);
-  transform: translate(-50%, -50%);
-  transition: width 0.25s ease, height 0.25s ease, transform 0.08s linear, border-color 0.2s;
-  opacity: 0.5;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, border-color 0.2s;
+  opacity: 0.45;
 }
 body.cursor-hover .cursor-dot {
-  width: 10px; height: 10px;
+  transform: translate(-50%, -50%) scale(1.8);
   background: var(--accent);
 }
 body.cursor-hover .cursor-ring {
-  width: 52px; height: 52px;
-  opacity: 0.25;
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.2;
 }
 @media (hover: none) {
   .cursor-dot, .cursor-ring { display: none; }
@@ -56,21 +56,15 @@ body::before {
   position: relative;
 }
 .typing-text::after {
-  content: '|';
-  color: var(--accent);
-  animation: blink 0.9s step-end infinite;
-  margin-left: 2px;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  content: '';
+  display: none;
 }
 
 /* ── STAGGERED CHILDREN ───────────────────────────────────────── */
 .stagger-children > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .stagger-children.visible > *:nth-child(1)  { transition-delay: 0s; }
 .stagger-children.visible > *:nth-child(2)  { transition-delay: 0.07s; }
@@ -86,26 +80,23 @@ body::before {
   transform: translateY(0);
 }
 
-/* ── MARQUEE / TICKER ─────────────────────────────────────────── */
+/* ── TECH STACK SHOWCASE STRIP ────────────────────────────────── */
 .marquee-track {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 1.25rem 0;
+  overflow-x: auto;
+  white-space: normal;
+  padding: 1.25rem 1.5rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--bg-surface);
   width: 100%;
-  max-width: 100vw;
   box-sizing: border-box;
 }
 .marquee-inner {
-  display: inline-flex;
-  animation: marquee 28s linear infinite;
-}
-.marquee-inner:hover { animation-play-state: paused; }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem 2.25rem;
 }
 .marquee-item {
   display: inline-flex;
@@ -162,7 +153,7 @@ body::before {
 }
 
 /* ── MAGNETIC BUTTON EFFECT ───────────────────────────────────── */
-.magnetic { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.magnetic { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
 
 /* ── UNDERLINE HOVER ──────────────────────────────────────────── */
 .underline-hover {
@@ -173,11 +164,13 @@ body::before {
   content: '';
   position: absolute;
   bottom: -2px; left: 0;
-  width: 0%; height: 1px;
+  width: 100%; height: 1.5px;
   background: var(--accent);
-  transition: width 0.25s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.underline-hover:hover::after { width: 100%; }
+.underline-hover:hover::after { transform: scaleX(1); }
 
 /* ── CARD SHINE (on hover) ────────────────────────────────────── */
 .card-shine {
@@ -216,10 +209,12 @@ body::before {
   height: 100%;
   background: var(--accent);
   border-radius: var(--r-full);
-  width: 0%;
-  transition: width 1.2s cubic-bezier(0.34, 1.1, 0.64, 1);
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.skill-bar-fill.animated { width: var(--fill); }
+.skill-bar-fill.animated { transform: scaleX(calc(var(--fill, 100) / 100)); }
 
 /* ── PAGE TRANSITION ──────────────────────────────────────────── */
 .page-transition {

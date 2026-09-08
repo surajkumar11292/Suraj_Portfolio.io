@@ -154,7 +154,7 @@
     
     const indicator = document.createElement('div');
     indicator.className = 'ts-typing-indicator';
-    indicator.innerHTML = '<div class="ts-dot"></div><div class="ts-dot"></div><div class="ts-dot"></div>';
+    indicator.innerHTML = '<span class="ts-typing-label">Thinking...</span>';
     
     msgDiv.appendChild(indicator);
     typingIndicatorRow.appendChild(avatarImg);

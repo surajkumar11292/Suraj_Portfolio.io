@@ -7,7 +7,7 @@
 
   /* ── BANNER ──────────────────────────────────────────────────── */
   #avail-banner {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     padding: 10px 2.5rem 10px 1rem;
     line-height: 1.5;
     text-align: left;
@@ -96,7 +96,7 @@
     height: 44px;
   }
   .spotify-title { font-size: 0.82rem; }
-  .spotify-artist { font-size: 0.72rem; }
+  .spotify-artist { font-size: 0.78rem; }
 
   /* ── TIMELINE ────────────────────────────────────────────────── */
 
@@ -128,7 +128,7 @@
   .timeline-body::before {
     content: attr(data-period);   /* populated by JS – see note below */
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-family: var(--font-mono);
     color: var(--text-muted);
     margin-bottom: 0.35rem;
@@ -146,7 +146,6 @@
     border-radius: 50%;
     background: var(--accent);
     border: 2px solid var(--bg-root);
-    box-shadow: 0 0 0 2px var(--accent);
   }
 
   /* ── CONTACT FORM ────────────────────────────────────────────── */
@@ -179,8 +178,8 @@
   /* Prevent tag pills from overflowing */
   .tag,
   .timeline-tags .tag {
-    font-size: 0.68rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.55rem;
     white-space: nowrap;
   }
 
@@ -332,7 +331,7 @@
 @media (max-width: 480px) {
 
   .hero-greeting {
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     padding: 6px 12px;
   }
   .hero-name {
